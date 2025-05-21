@@ -6,7 +6,19 @@ using System.Threading.Tasks;
 
 namespace Fire_Sales___Sales_Management_System.Model
 {
-    class User
+    public enum UserRole
     {
+        Admin,
+        Cashier
     }
+
+    public class User
+    {
+        public int UserID { get; set; }
+        public string Username { get; set; }
+        public string Password { get; set; }
+        public UserRole Role { get; set; }
+        public bool IsActive { get; set; }
+    }
+
 }

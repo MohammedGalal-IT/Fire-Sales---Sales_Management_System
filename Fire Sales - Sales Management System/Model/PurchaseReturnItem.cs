@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace Fire_Sales___Sales_Management_System.Model
 {
-    class PurchaseReturnItem
+    public class PurchaseReturnItem
     {
+        public int PurchaseReturnItemID { get; set; }
+        public int PurchaseReturnID { get; set; }
+        public int ProductID { get; set; }
+        public int Quantity { get; set; }
+        public decimal ReturnAmount { get; set; }
     }
+
 }

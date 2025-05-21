@@ -12,6 +12,7 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -49,6 +50,22 @@
     <Compile Include="Business Logic\Controllers\LoginController.cs" />
     <Compile Include="Business Logic\Controllers\MainController.cs" />
     <Compile Include="Business Logic\Services\AuthService.cs" />
+    <Compile Include="Helpers\Database Helpers\DatabaseManager.cs" />
+    <Compile Include="Model\Category.cs" />
+    <Compile Include="Model\Expense.cs" />
+    <Compile Include="Model\Product.cs" />
+    <Compile Include="Model\PurchaseInvoice.cs" />
+    <Compile Include="Model\PurchaseItem.cs" />
+    <Compile Include="Model\PurchaseReturn.cs" />
+    <Compile Include="Model\PurchaseReturnItem.cs" />
+    <Compile Include="Model\SalesInvoice.cs" />
+    <Compile Include="Model\SalesItem.cs" />
+    <Compile Include="Model\SalesReturn.cs" />
+    <Compile Include="Model\SalesReturnItem.cs" />
+    <Compile Include="Model\ShiftReport.cs" />
+    <Compile Include="Model\Supplier.cs" />
+    <Compile Include="Model\TransactionLog.cs" />
+    <Compile Include="Model\User.cs" />
     <Compile Include="Presentation\Views\LoginView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -71,6 +88,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -88,9 +106,8 @@
   <ItemGroup>
     <Folder Include="Data Access\Interfaces\" />
     <Folder Include="Data Access\Repositories\" />
-    <Folder Include="Helpers\Validation\" />
-    <Folder Include="Model\" />
-    <Folder Include="Util\" />
+    <Folder Include="Helpers\Extensions\" />
+    <Folder Include="Helpers\Validation Helpers\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

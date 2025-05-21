@@ -6,7 +6,14 @@ using System.Threading.Tasks;
 
 namespace Fire_Sales___Sales_Management_System.Model
 {
-    class Supplier
+    public class Supplier
     {
+        public int SupplierID { get; set; }
+        public string Name { get; set; }
+        public string Phone { get; set; }
+        public string Email { get; set; }
+        public string Address { get; set; }
+        public bool IsActive { get; set; }
     }
+
 }

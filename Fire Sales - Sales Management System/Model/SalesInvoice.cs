@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace Fire_Sales___Sales_Management_System.Model
 {
-    class SalesInvoice
+    public class SalesInvoice
     {
+        public int SalesInvoiceID { get; set; }
+        public string InvoiceNumber { get; set; }
+        public DateTime Date { get; set; }
+        public decimal TotalAmount { get; set; }
+        public int CreatedBy { get; set; }
     }
+
 }

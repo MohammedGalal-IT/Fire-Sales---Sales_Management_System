@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace Fire_Sales___Sales_Management_System.Model
 {
-    class Category
+    public class Category
     {
+        public int CategoryID { get; set; }
+        public string Name { get; set; }
+        public string Description { get; set; }
     }
+
 }
