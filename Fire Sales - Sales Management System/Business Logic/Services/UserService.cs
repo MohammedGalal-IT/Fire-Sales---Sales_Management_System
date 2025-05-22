@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Fire_Sales___Sales_Management_System.Business_Logic.Services
 {
-    class AuthService
+    class UserService
     {
     }
 }
