@@ -9,6 +9,7 @@ namespace Fire_Sales___Sales_Management_System.Data_Access.Interfaces
 {
     public interface ISalesReturnItemRepository : IRepository<SalesReturnItem>
     {
-        List<SalesReturnItem> GetByReturnId(int returnId);
+        List<SalesReturnItem> GetBySalesReturnId(int salesReturnId);
+        List<SalesReturnItem> GetByProductId(int productId);
     }
 }

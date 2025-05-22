@@ -10,5 +10,6 @@ namespace Fire_Sales___Sales_Management_System.Data_Access.Interfaces
     public interface IPurchaseItemRepository : IRepository<PurchaseItem>
     {
         List<PurchaseItem> GetByInvoiceId(int purchaseInvoiceId);
+        List<PurchaseItem> GetByProductId(int productId);
     }
 }

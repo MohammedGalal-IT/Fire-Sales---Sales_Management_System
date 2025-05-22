@@ -11,5 +11,6 @@ namespace Fire_Sales___Sales_Management_System.Data_Access.Interfaces
     {
         SalesInvoice GetByInvoiceNumber(string invoiceNumber);
         List<SalesInvoice> GetByDateRange(System.DateTime from, System.DateTime to);
+        List<SalesInvoice> GetByUserId(int userId);
     }
 }

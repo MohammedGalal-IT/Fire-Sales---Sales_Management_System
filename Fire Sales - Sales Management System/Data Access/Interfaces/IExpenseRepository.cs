@@ -9,6 +9,8 @@ namespace Fire_Sales___Sales_Management_System.Data_Access.Interfaces
 {
     public interface IExpenseRepository : IRepository<Expense>
     {
-        List<Expense> GetByDateRange(System.DateTime from, System.DateTime to);
+        List<Expense> GetByUserId(int userId);
+        List<Expense> GetByDateRange(DateTime start, DateTime end);
+        List<Expense> GetByType(string type);
     }
 }

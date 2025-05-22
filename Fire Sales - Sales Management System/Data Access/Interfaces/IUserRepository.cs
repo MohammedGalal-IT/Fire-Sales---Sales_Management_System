@@ -10,6 +10,11 @@ namespace Fire_Sales___Sales_Management_System.Data_Access.Interfaces
     public interface IUserRepository : IRepository<User>
     {
         User GetByUsername(string username);
-        bool ValidateLogin(string username, string password);
+        List<User> GetActiveUsers();
+        List<User> GetByRole(string role);
+
+        //bool ValidateLogin(string username, string password);
+
+
     }
 }

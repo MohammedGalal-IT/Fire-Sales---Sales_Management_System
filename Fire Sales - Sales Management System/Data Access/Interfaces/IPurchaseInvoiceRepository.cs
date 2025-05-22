@@ -11,5 +11,6 @@ namespace Fire_Sales___Sales_Management_System.Data_Access.Interfaces
     {
         PurchaseInvoice GetByInvoiceNumber(string invoiceNumber);
         List<PurchaseInvoice> GetBySupplierId(int supplierId);
+        List<PurchaseInvoice> GetByDateRange(DateTime startDate, DateTime endDate);
     }
 }

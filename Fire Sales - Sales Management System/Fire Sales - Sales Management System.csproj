@@ -50,14 +50,37 @@
     <Compile Include="Business Logic\Controllers\LoginController.cs" />
     <Compile Include="Business Logic\Controllers\MainController.cs" />
     <Compile Include="Business Logic\Services\AuthService.cs" />
-    <Compile Include="Data Access\Interfaces\ICategoryRepository .cs" />
-    <Compile Include="Data Access\Interfaces\IProductRepository .cs" />
-    <Compile Include="Data Access\Interfaces\IPurchaseInvoiceRepository .cs" />
+    <Compile Include="Data Access\Interfaces\ICategoryRepository.cs" />
+    <Compile Include="Data Access\Interfaces\IExpenseRepository.cs" />
+    <Compile Include="Data Access\Interfaces\IProductRepository.cs" />
+    <Compile Include="Data Access\Interfaces\IPurchaseInvoiceRepository.cs" />
     <Compile Include="Data Access\Interfaces\IPurchaseItemRepository.cs" />
+    <Compile Include="Data Access\Interfaces\IPurchaseReturnItemRepository.cs" />
+    <Compile Include="Data Access\Interfaces\IPurchaseReturnRepository.cs" />
     <Compile Include="Data Access\Interfaces\IRepository.cs" />
-    <Compile Include="Data Access\Interfaces\ISalesInvoiceRepository .cs" />
-    <Compile Include="Data Access\Interfaces\ISupplierRepository .cs" />
-    <Compile Include="Data Access\Interfaces\IUserRepository .cs" />
+    <Compile Include="Data Access\Interfaces\ISalesInvoiceRepository.cs" />
+    <Compile Include="Data Access\Interfaces\ISalesItemRepository.cs" />
+    <Compile Include="Data Access\Interfaces\ISalesReturnItemRepository.cs" />
+    <Compile Include="Data Access\Interfaces\ISalesReturnRepository.cs" />
+    <Compile Include="Data Access\Interfaces\IShiftReportRepository.cs" />
+    <Compile Include="Data Access\Interfaces\ISupplierRepository.cs" />
+    <Compile Include="Data Access\Interfaces\ITransactionLogRepository.cs" />
+    <Compile Include="Data Access\Interfaces\IUserRepository.cs" />
+    <Compile Include="Data Access\Repositories\ExpenseRepository.cs" />
+    <Compile Include="Data Access\Repositories\PurchaseInvoiceRepository.cs" />
+    <Compile Include="Data Access\Repositories\CategoryRepository.cs" />
+    <Compile Include="Data Access\Repositories\ProductRepository.cs" />
+    <Compile Include="Data Access\Repositories\PurchaseItemRepository.cs" />
+    <Compile Include="Data Access\Repositories\PurchaseReturnItemRepository.cs" />
+    <Compile Include="Data Access\Repositories\PurchaseReturnRepository.cs" />
+    <Compile Include="Data Access\Repositories\SalesInvoiceRepository.cs" />
+    <Compile Include="Data Access\Repositories\SalesItemRepository.cs" />
+    <Compile Include="Data Access\Repositories\SalesReturnItemRepository.cs" />
+    <Compile Include="Data Access\Repositories\SalesReturnRepository.cs" />
+    <Compile Include="Data Access\Repositories\ShiftReportRepository.cs" />
+    <Compile Include="Data Access\Repositories\SupplierRepository.cs" />
+    <Compile Include="Data Access\Repositories\TransactionLogRepository.cs" />
+    <Compile Include="Data Access\Repositories\UserRepository .cs" />
     <Compile Include="Helpers\Database Helpers\DatabaseManager.cs" />
     <Compile Include="Helpers\Extensions\DataReaderExtensions.cs" />
     <Compile Include="Model\Category.cs" />
@@ -89,6 +112,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Presentation\Views\LoginView.resx">
+      <DependentUpon>LoginView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -113,7 +139,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Data Access\Repositories\" />
     <Folder Include="Helpers\Validation Helpers\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

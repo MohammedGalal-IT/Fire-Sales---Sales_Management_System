@@ -10,8 +10,8 @@ namespace Fire_Sales___Sales_Management_System.Data_Access.Interfaces
     {
         T GetById(int id);
         List<T> GetAll();
-        void Add(T entity);
-        void Update(T entity);
-        void Delete(int id);
+        int Add(T entity);
+        int Update(T entity);
+        int Delete(int id);
     }
 }
