@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Fire_Sales___Sales_Management_System.Presentation.Views
 {
-    public partial class MainView: Form
+    public partial class TestView: Form
     {
-        public MainView()
+        public TestView()
         {
             InitializeComponent();
         }

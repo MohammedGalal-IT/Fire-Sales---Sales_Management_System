@@ -16,7 +16,6 @@ namespace Fire_Sales___Sales_Management_System.Business_Logic.Interfaces
         bool UpdateInvoice(PurchaseInvoice invoice);
         bool DeleteInvoice(int id);
         List<PurchaseInvoice> GetInvoicesBySupplierId(int supplierId);
-        List<PurchaseInvoice> GetInvoicesByUserId(int userId);
         List<PurchaseInvoice> GetInvoicesByDateRange(DateTime start, DateTime end);
 
 

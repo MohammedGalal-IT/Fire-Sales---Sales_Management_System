@@ -1,26 +1,29 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
-using System.Data.SqlClient;
-using System.Reflection;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using MySql.Data.MySqlClient;
 using Fire_Sales___Sales_Management_System.Helpers.Extensions;
+using System.Data;
 
 namespace Fire_Sales___Sales_Management_System.Helpers.Database_Helpers
 {
-    public class DatabaseManager
+    public class MySQLManager: DatabaseManager
     {
         private readonly string _connectionString;
 
-        public DatabaseManager(string connectionString)
+        public MySQLManager(string connectionString): base(connectionString)
         {
             _connectionString = connectionString;
         }
 
-        public virtual int ExecuteNonQuery(string query, Dictionary<string, object> parameters = null)
+        
+        public override int ExecuteNonQuery(string query, Dictionary<string, object> parameters = null)
         {
-            using (var connection = new SqlConnection(_connectionString))
+            using (var connection = new MySqlConnection(_connectionString))
             {
-                using (var command = new SqlCommand(query, connection))
+                using (var command = new MySqlCommand(query, connection))
                 {
                     AddParameters(command, parameters);
                     connection.Open();
@@ -29,11 +32,11 @@ namespace Fire_Sales___Sales_Management_System.Helpers.Database_Helpers
             }
         }
 
-        public virtual object ExecuteScalar(string query, Dictionary<string, object> parameters = null)
+        public override object ExecuteScalar(string query, Dictionary<string, object> parameters = null)
         {
-            using (var connection = new SqlConnection(_connectionString))
+            using (var connection = new MySqlConnection(_connectionString))
             {
-                using (var command = new SqlCommand(query, connection))
+                using (var command = new MySqlCommand(query, connection))
                 {
                     AddParameters(command, parameters);
                     connection.Open();
@@ -42,11 +45,11 @@ namespace Fire_Sales___Sales_Management_System.Helpers.Database_Helpers
             }
         }
 
-        public virtual List<T> ExecuteToList<T>(string query, Dictionary<string, object> parameters = null) where T : new()
+        public override List<T> ExecuteToList<T>(string query, Dictionary<string, object> parameters = null)
         {
-            using (var connection = new SqlConnection(_connectionString))
+            using (var connection = new MySqlConnection(_connectionString))
             {
-                using (var command = new SqlCommand(query, connection))
+                using (var command = new MySqlCommand(query, connection))
                 {
                     AddParameters(command, parameters);
                     connection.Open();
@@ -58,14 +61,14 @@ namespace Fire_Sales___Sales_Management_System.Helpers.Database_Helpers
             }
         }
 
-        public virtual DataTable ExecuteDataTable(string query, Dictionary<string, object> parameters = null)
+        public override DataTable ExecuteDataTable(string query, Dictionary<string, object> parameters = null)
         {
-            using (var connection = new SqlConnection(_connectionString))
+            using (var connection = new MySqlConnection(_connectionString))
             {
-                using (var command = new SqlCommand(query, connection))
+                using (var command = new MySqlCommand(query, connection))
                 {
                     AddParameters(command, parameters);
-                    using (var adapter = new SqlDataAdapter(command))
+                    using (var adapter = new MySqlDataAdapter(command))
                     {
                         var table = new DataTable();
                         adapter.Fill(table);
@@ -75,7 +78,7 @@ namespace Fire_Sales___Sales_Management_System.Helpers.Database_Helpers
             }
         }
 
-        private void AddParameters(SqlCommand command, Dictionary<string, object> parameters)
+        private void AddParameters(MySqlCommand command, Dictionary<string, object> parameters)
         {
             if (parameters == null) return;
 
@@ -84,5 +87,7 @@ namespace Fire_Sales___Sales_Management_System.Helpers.Database_Helpers
                 command.Parameters.AddWithValue(param.Key, param.Value ?? DBNull.Value);
             }
         }
+
+
     }
 }

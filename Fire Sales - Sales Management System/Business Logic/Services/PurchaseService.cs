@@ -53,11 +53,6 @@ namespace Fire_Sales___Sales_Management_System.Business_Logic.Services
             return _invoiceRepository.GetBySupplierId(supplierId);
         }
 
-        public List<PurchaseInvoice> GetInvoicesByUserId(int userId)
-        {
-            return _invoiceRepository.GetByUserId(userId);
-        }
-
         public List<PurchaseInvoice> GetInvoicesByDateRange(DateTime start, DateTime end)
         {
             return _invoiceRepository.GetByDateRange(start, end);
@@ -76,17 +71,17 @@ namespace Fire_Sales___Sales_Management_System.Business_Logic.Services
 
         public bool AddPurchaseItem(PurchaseItem item)
         {
-            return _itemRepository.Add(item);
+            return _itemRepository.Add(item) > 0;
         }
 
         public bool UpdatePurchaseItem(PurchaseItem item)
         {
-            return _itemRepository.Update(item);
+            return _itemRepository.Update(item) > 0;
         }
 
         public bool DeletePurchaseItem(int itemId)
         {
-            return _itemRepository.Delete(itemId);
+            return _itemRepository.Delete(itemId) > 0;
         }
     }
 }

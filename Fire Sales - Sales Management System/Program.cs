@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
 using Fire_Sales___Sales_Management_System.Presentation.Views;
+
 
 namespace Fire_Sales___Sales_Management_System
 {
@@ -18,7 +18,7 @@ namespace Fire_Sales___Sales_Management_System
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LoginView());
+            Application.Run(new FuckView());
         }
     }
 }
