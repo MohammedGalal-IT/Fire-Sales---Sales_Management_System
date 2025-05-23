@@ -12,6 +12,7 @@ namespace Fire_Sales___Sales_Management_System.Data_Access.Interfaces
         User GetByUsername(string username);
         List<User> GetActiveUsers();
         List<User> GetByRole(string role);
+        User Authenticate(string username, string password);
 
         //bool ValidateLogin(string username, string password);
 

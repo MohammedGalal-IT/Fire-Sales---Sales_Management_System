@@ -32,7 +32,7 @@ namespace Fire_Sales___Sales_Management_System.Data_Access.Repositories
             return result.Count > 0 ? result[0] : null;
         }
 
-        public bool Add(ShiftReport item)
+        public int Add(ShiftReport item)
         {
             string query = @"
                 INSERT INTO ShiftReport (Date, TotalSales, TotalReturns, TotalExpenses, NetTotal, Note, CreatedBy)
@@ -49,10 +49,10 @@ namespace Fire_Sales___Sales_Management_System.Data_Access.Repositories
                 { "@UserID", item.CreatedBy }
             };
 
-            return _db.ExecuteNonQuery(query, parameters) > 0;
+            return _db.ExecuteNonQuery(query, parameters);
         }
 
-        public bool Update(ShiftReport item)
+        public int Update(ShiftReport item)
         {
             string query = @"
                 UPDATE ShiftReport SET
@@ -77,15 +77,17 @@ namespace Fire_Sales___Sales_Management_System.Data_Access.Repositories
                 { "@UserID", item.CreatedBy }
             };
 
-            return _db.ExecuteNonQuery(query, parameters) > 0;
+            return _db.ExecuteNonQuery(query, parameters);
         }
 
-        public bool Delete(int id)
+        public int Delete(int id)
         {
             string query = "DELETE FROM ShiftReport WHERE ReportID = @ID";
             var parameters = new Dictionary<string, object> { { "@ID", id } };
-            return _db.ExecuteNonQuery(query, parameters) > 0;
+            return _db.ExecuteNonQuery(query, parameters);
         }
+
+        //----
 
         public List<ShiftReport> GetByUserId(int userId)
         {

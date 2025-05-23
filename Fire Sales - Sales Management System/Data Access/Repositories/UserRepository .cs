@@ -100,5 +100,17 @@ namespace Fire_Sales___Sales_Management_System.Data_Access.Repositories
             var parameters = new Dictionary<string, object> { { "@Role", role } };
             return _db.ExecuteToList<User>(query, parameters);
         }
+
+        public User Authenticate(string username, string password)
+        {
+            string query = "SELECT * FROM User WHERE Username = @Username AND Password = @Password AND IsActive = TRUE";
+            var parameters = new Dictionary<string, object>
+    {
+        { "@Username", username },
+        { "@Password", password }
+    };
+            var result = _db.ExecuteToList<User>(query, parameters);
+            return result.Count > 0 ? result[0] : null;
+        }
     }
 }
