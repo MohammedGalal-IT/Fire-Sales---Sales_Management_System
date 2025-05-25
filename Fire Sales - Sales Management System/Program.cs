@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Fire_Sales___Sales_Management_System.Presentation.Views;
+//using Fire_Sales___Sales_Management_System.Presentation.TempViews;
 
 
 namespace Fire_Sales___Sales_Management_System
@@ -23,7 +24,7 @@ namespace Fire_Sales___Sales_Management_System
             signinForm s = new signinForm();
             //AddNewProductForm a = new AddNewProductForm();
             //AddNewCategoryForm b = new AddNewCategoryForm();
-            Application.Run(s);
+            Application.Run(new SalePageViewForm());
 
             //Application.Run(new signupForm());
             //Application.Run(new frMainView(s.user));
