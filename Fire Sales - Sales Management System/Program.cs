@@ -16,9 +16,19 @@ namespace Fire_Sales___Sales_Management_System
         [STAThread]
         static void Main()
         {
+            
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FuckView());
+            //Application.Run(new LoginForm());
+            signinForm s = new signinForm();
+            //AddNewProductForm a = new AddNewProductForm();
+            //AddNewCategoryForm b = new AddNewCategoryForm();
+            Application.Run(s);
+
+            //Application.Run(new signupForm());
+            //Application.Run(new frMainView(s.user));
+            s.Close();
+            //Application.Run(new CreateAccountView());
         }
     }
 }

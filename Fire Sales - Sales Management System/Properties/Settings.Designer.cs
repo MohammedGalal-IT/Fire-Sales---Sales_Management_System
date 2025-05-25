@@ -22,5 +22,16 @@ namespace Fire_Sales___Sales_Management_System.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-KL322NI\\MOHAMMEDGALAL;Initial Catalog=db_FireSales;Integrated" +
+            " Security=True;TrustServerCertificate=True")]
+        public string db_FireSalesConnectionString {
+            get {
+                return ((string)(this["db_FireSalesConnectionString"]));
+            }
+        }
     }
 }

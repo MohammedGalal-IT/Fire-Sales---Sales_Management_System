@@ -16,5 +16,7 @@ namespace Fire_Sales___Sales_Management_System.Business_Logic.Interfaces
         bool DeleteUser(int id);
         User Authenticate(string username, string password);
         List<User> GetActiveUsers();
+        // by username
+        User GetByUsername(string username);
     }
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Common;
+using System.Linq;
 using System.Reflection;
 
 namespace Fire_Sales___Sales_Management_System.Helpers.Extensions
@@ -11,23 +12,48 @@ namespace Fire_Sales___Sales_Management_System.Helpers.Extensions
         public static List<T> MapToList<T>(this IDataReader reader) where T : new()
         {
             var result = new List<T>();
-            var props = typeof(T).GetProperties(BindingFlags.Public | BindingFlags.Instance);
+            var properties = typeof(T).GetProperties(BindingFlags.Public | BindingFlags.Instance)
+                .Where(p => p.CanWrite)
+                .ToArray();
 
-            var columnNames = new HashSet<string>();
+            var readerColumns = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
             for (int i = 0; i < reader.FieldCount; i++)
-                columnNames.Add(reader.GetName(i));
+            {
+                readerColumns.Add(reader.GetName(i));
+            }
+
+            var relevantProps = properties.Where(p => readerColumns.Contains(p.Name)).ToArray();
 
             while (reader.Read())
             {
                 var obj = new T();
-                foreach (var prop in props)
+                foreach (var prop in relevantProps)
                 {
-                    if (!prop.CanWrite || !columnNames.Contains(prop.Name)) continue;
+                    try
+                    {
+                        object value = reader[prop.Name];
+                        if (value == DBNull.Value) continue;
 
-                    var val = reader[prop.Name];
-                    if (val == DBNull.Value) continue;
-
-                    prop.SetValue(obj, Convert.ChangeType(val, Nullable.GetUnderlyingType(prop.PropertyType) ?? prop.PropertyType));
+                        // معالجة خاصة للأنواع المخصصة (Enums أو أنواع أخرى)
+                        if (prop.PropertyType.IsEnum)
+                        {
+                            prop.SetValue(obj, Enum.Parse(prop.PropertyType, value.ToString()));
+                        }
+                        else if (prop.PropertyType == typeof(Guid))
+                        {
+                            prop.SetValue(obj, Guid.Parse(value.ToString()));
+                        }
+                        else
+                        {
+                            var targetType = Nullable.GetUnderlyingType(prop.PropertyType) ?? prop.PropertyType;
+                            prop.SetValue(obj, Convert.ChangeType(value, targetType));
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        // يمكنك تسجيل الخطأ هنا إذا لزم الأمر
+                        throw new InvalidOperationException($"Error mapping column {prop.Name} to property {prop.Name} of type {prop.PropertyType}", ex);
+                    }
                 }
                 result.Add(obj);
             }
@@ -35,4 +61,5 @@ namespace Fire_Sales___Sales_Management_System.Helpers.Extensions
             return result;
         }
     }
+
 }

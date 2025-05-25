@@ -53,5 +53,11 @@ namespace Fire_Sales___Sales_Management_System.Business_Logic.Services
         {
             return _userRepository.GetActiveUsers();
         }
+
+        
+        public User GetByUsername(string username)
+        {
+            return _userRepository.GetByUsername(username);
+        }
     }
 }

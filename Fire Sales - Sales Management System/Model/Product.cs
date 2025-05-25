@@ -16,7 +16,7 @@ namespace Fire_Sales___Sales_Management_System.Model
         public decimal SellingPrice { get; set; }
         public int StockQuantity { get; set; }
         public string Unit { get; set; }
-        public bool IsActive { get; set; }
+        public int IsActive { get; set; }
     }
 
 }

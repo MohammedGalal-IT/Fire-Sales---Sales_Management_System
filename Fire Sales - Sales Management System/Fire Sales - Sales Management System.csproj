@@ -125,17 +125,30 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Business Logic\Controllers\CreateAccountController.cs" />
     <Compile Include="Business Logic\Controllers\LoginController.cs" />
     <Compile Include="Business Logic\Controllers\MainController.cs" />
     <Compile Include="Business Logic\Interfaces\ICategoryService.cs" />
+    <Compile Include="Business Logic\Interfaces\IExpenseService.cs" />
     <Compile Include="Business Logic\Interfaces\IProductService.cs" />
+    <Compile Include="Business Logic\Interfaces\IPurchaseReturnService.cs" />
     <Compile Include="Business Logic\Interfaces\IPurchaseService.cs" />
+    <Compile Include="Business Logic\Interfaces\ISalesReturnService.cs" />
+    <Compile Include="Business Logic\Interfaces\ISalesService.cs" />
+    <Compile Include="Business Logic\Interfaces\IShiftReportService.cs" />
     <Compile Include="Business Logic\Interfaces\ISupplierService.cs" />
+    <Compile Include="Business Logic\Interfaces\ITransactionLogService.cs" />
     <Compile Include="Business Logic\Interfaces\IUserService.cs" />
     <Compile Include="Business Logic\Services\CategoryService.cs" />
+    <Compile Include="Business Logic\Services\ExpenseService.cs" />
     <Compile Include="Business Logic\Services\ProductService.cs" />
+    <Compile Include="Business Logic\Services\PurchaseReturnService.cs" />
     <Compile Include="Business Logic\Services\PurchaseService.cs" />
+    <Compile Include="Business Logic\Services\SalesReturnService.cs" />
+    <Compile Include="Business Logic\Services\SalesService .cs" />
+    <Compile Include="Business Logic\Services\ShiftReportService.cs" />
     <Compile Include="Business Logic\Services\SupplierService.cs" />
+    <Compile Include="Business Logic\Services\TransactionLogService.cs" />
     <Compile Include="Business Logic\Services\UserService.cs" />
     <Compile Include="Data Access\Interfaces\ICategoryRepository.cs" />
     <Compile Include="Data Access\Interfaces\IExpenseRepository.cs" />
@@ -168,6 +181,11 @@
     <Compile Include="Data Access\Repositories\SupplierRepository.cs" />
     <Compile Include="Data Access\Repositories\TransactionLogRepository.cs" />
     <Compile Include="Data Access\Repositories\UserRepository .cs" />
+    <Compile Include="db_FireSalesDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>db_FireSalesDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Helpers\Database Helpers\DatabaseManager.cs" />
     <Compile Include="Helpers\Database Helpers\MySQLManager.cs" />
     <Compile Include="Helpers\Extensions\MySqlDataReaderExtensions.cs" />
@@ -187,14 +205,86 @@
     <Compile Include="Model\Supplier.cs" />
     <Compile Include="Model\TransactionLog.cs" />
     <Compile Include="Model\User.cs" />
-    <Compile Include="Presentation\Views\FuckView.cs">
+    <Compile Include="Presentation\TempViews\CreateAccountView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentation\Views\FuckView.Designer.cs">
-      <DependentUpon>FuckView.cs</DependentUpon>
+    <Compile Include="Presentation\TempViews\CreateAccountView.Designer.cs">
+      <DependentUpon>CreateAccountView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\TempViews\LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\TempViews\LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Views\AddNewCategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\Views\AddNewCategory.Designer.cs">
+      <DependentUpon>AddNewCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Views\AddNewProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\Views\AddNewProduct.Designer.cs">
+      <DependentUpon>AddNewProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Views\MainView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\Views\MainView.Designer.cs">
+      <DependentUpon>MainView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Views\SignUpView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\Views\SignUpView.Designer.cs">
+      <DependentUpon>SignUpView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Views\MainView2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\Views\MainView2.Designer.cs">
+      <DependentUpon>MainView2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Views\signinForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\Views\signinForm.Designer.cs">
+      <DependentUpon>signinForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Views\TestView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\Views\TestView.Designer.cs">
+      <DependentUpon>TestView.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Presentation\TempViews\CreateAccountView.resx">
+      <DependentUpon>CreateAccountView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\TempViews\LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\Views\AddNewCategory.resx">
+      <DependentUpon>AddNewCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\Views\AddNewProduct.resx">
+      <DependentUpon>AddNewProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\Views\MainView.resx">
+      <DependentUpon>MainView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\Views\SignUpView.resx">
+      <DependentUpon>SignUpView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\Views\MainView2.resx">
+      <DependentUpon>MainView2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\Views\signinForm.resx">
+      <DependentUpon>signinForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -205,6 +295,17 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="db_FireSalesDataSet.xsc">
+      <DependentUpon>db_FireSalesDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="db_FireSalesDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>db_FireSalesDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="db_FireSalesDataSet.xss">
+      <DependentUpon>db_FireSalesDataSet.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -221,6 +322,13 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Helpers\Validation Helpers\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Presentation\Views\Resources\box.png" />
+    <Content Include="Presentation\Views\Resources\category.png" />
+    <Content Include="Presentation\Views\Resources\img.png" />
+    <Content Include="Presentation\Views\Resources\shopping.png" />
+    <Content Include="Presentation\Views\Resources\user-icons.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Avalonia.BuildServices.0.0.31\build\Avalonia.BuildServices.targets" Condition="Exists('..\packages\Avalonia.BuildServices.0.0.31\build\Avalonia.BuildServices.targets')" />

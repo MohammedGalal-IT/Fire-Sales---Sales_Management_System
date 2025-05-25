@@ -8,5 +8,6 @@ namespace Fire_Sales___Sales_Management_System.Business_Logic.Controllers
 {
     class MainController
     {
+
     }
 }

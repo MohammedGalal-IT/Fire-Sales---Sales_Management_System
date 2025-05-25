@@ -42,7 +42,7 @@ namespace Fire_Sales___Sales_Management_System.Data_Access.Repositories
             {
                 { "@Username", user.Username },
                 { "@Password", user.Password },
-                { "@Role", user.Role },
+                { "@Role", user.Role.ToString() },
                 { "@IsActive", user.IsActive }
             };
 
@@ -103,7 +103,7 @@ namespace Fire_Sales___Sales_Management_System.Data_Access.Repositories
 
         public User Authenticate(string username, string password)
         {
-            string query = "SELECT * FROM User WHERE Username = @Username AND Password = @Password AND IsActive = TRUE";
+            string query = "SELECT * FROM [user] WHERE Username = @Username AND Password = @Password AND IsActive = 1";
             var parameters = new Dictionary<string, object>
     {
         { "@Username", username },
