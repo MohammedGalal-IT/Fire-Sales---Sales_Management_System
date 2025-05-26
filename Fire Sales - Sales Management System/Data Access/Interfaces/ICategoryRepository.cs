@@ -10,5 +10,6 @@ namespace Fire_Sales___Sales_Management_System.Data_Access.Interfaces
     public interface ICategoryRepository : IRepository<Category>
     {
         List<Category> SearchByName(string name);
+        Category GetByName(string name);
     }
 }

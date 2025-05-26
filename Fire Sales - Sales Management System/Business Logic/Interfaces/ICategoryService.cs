@@ -11,8 +11,10 @@ namespace Fire_Sales___Sales_Management_System.Business_Logic.Interfaces
     {
         List<Category> GetAllCategories();
         Category GetCategoryById(int id);
+        Category GetCategoryByName(string name);
         bool CreateCategory(Category category);
         bool UpdateCategory(Category category);
         bool DeleteCategory(int id);
+
     }
 }

@@ -29,6 +29,11 @@ namespace Fire_Sales___Sales_Management_System.Business_Logic.Services
             return _categoryRepository.GetById(id);
         }
 
+        public Category GetCategoryByName(string name)
+        {
+            return _categoryRepository.GetByName(name);
+        }
+
         public bool CreateCategory(Category category)
         {
             return _categoryRepository.Add(category) > 0;

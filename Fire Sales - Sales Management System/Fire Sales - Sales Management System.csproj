@@ -186,6 +186,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>db_FireSalesDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="db_FireSalesDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>db_FireSalesDataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Helpers\Database Helpers\DatabaseManager.cs" />
     <Compile Include="Helpers\Database Helpers\MySQLManager.cs" />
     <Compile Include="Helpers\Extensions\MySqlDataReaderExtensions.cs" />
@@ -235,11 +240,35 @@
     <Compile Include="Presentation\Views\AddNewProduct.Designer.cs">
       <DependentUpon>AddNewProduct.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentation\Views\MainView.cs">
+    <Compile Include="Presentation\Views\EnterExpensesView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentation\Views\MainView.Designer.cs">
-      <DependentUpon>MainView.cs</DependentUpon>
+    <Compile Include="Presentation\Views\EnterExpensesView.Designer.cs">
+      <DependentUpon>EnterExpensesView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Views\DashBoard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\Views\DashBoard.Designer.cs">
+      <DependentUpon>DashBoard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Views\PurchaseItemView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\Views\PurchaseItemView.Designer.cs">
+      <DependentUpon>PurchaseItemView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Views\ReturnBillView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\Views\ReturnBillView.Designer.cs">
+      <DependentUpon>ReturnBillView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Views\ReturnProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\Views\ReturnProduct.Designer.cs">
+      <DependentUpon>ReturnProduct.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentation\Views\SalePageView.cs">
       <SubType>Form</SubType>
@@ -288,8 +317,20 @@
     <EmbeddedResource Include="Presentation\Views\AddNewProduct.resx">
       <DependentUpon>AddNewProduct.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentation\Views\MainView.resx">
-      <DependentUpon>MainView.cs</DependentUpon>
+    <EmbeddedResource Include="Presentation\Views\EnterExpensesView.resx">
+      <DependentUpon>EnterExpensesView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\Views\DashBoard.resx">
+      <DependentUpon>DashBoard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\Views\PurchaseItemView.resx">
+      <DependentUpon>PurchaseItemView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\Views\ReturnBillView.resx">
+      <DependentUpon>ReturnBillView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\Views\ReturnProduct.resx">
+      <DependentUpon>ReturnProduct.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\Views\SalePageView.resx">
       <DependentUpon>SalePageView.cs</DependentUpon>
@@ -323,6 +364,17 @@
     </None>
     <None Include="db_FireSalesDataSet.xss">
       <DependentUpon>db_FireSalesDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="db_FireSalesDataSet1.xsc">
+      <DependentUpon>db_FireSalesDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="db_FireSalesDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>db_FireSalesDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="db_FireSalesDataSet1.xss">
+      <DependentUpon>db_FireSalesDataSet1.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

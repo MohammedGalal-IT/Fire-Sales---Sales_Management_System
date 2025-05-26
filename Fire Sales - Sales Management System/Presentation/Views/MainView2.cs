@@ -29,6 +29,8 @@ namespace Fire_Sales___Sales_Management_System.Presentation.Views
 
         private void MainView_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'db_FireSalesDataSet1.vw_TransactionLogWithUser' table. You can move, or remove it, as needed.
+            this.vw_TransactionLogWithUserTableAdapter.Fill(this.db_FireSalesDataSet1.vw_TransactionLogWithUser);
             // TODO: This line of code loads data into the 'db_FireSalesDataSet.PurchaseInvoice' table. You can move, or remove it, as needed.
             this.purchaseInvoiceTableAdapter.Fill(this.db_FireSalesDataSet.PurchaseInvoice);
             // TODO: This line of code loads data into the 'db_FireSalesDataSet.User' table. You can move, or remove it, as needed.
@@ -61,6 +63,26 @@ namespace Fire_Sales___Sales_Management_System.Presentation.Views
         private void btnDashBoard_Click(object sender, EventArgs e)
         {
             new mainForm().ShowDialog(this);
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+          
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click_1(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

@@ -98,10 +98,7 @@ namespace Fire_Sales___Sales_Management_System.Presentation.Views
             ICategoryService categoryService = new CategoryService(categoryRepository);
 
             List<Category> categories = categoryService.GetAllCategories();
-            //foreach (Category category in categories)
-            //{
-            //    cbxCategory.Items.Add(category.Name);    
-            //}
+
 
             for (int i = 0; i < categories.Count; i++)
             {

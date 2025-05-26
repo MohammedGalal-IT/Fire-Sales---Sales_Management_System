@@ -85,5 +85,17 @@ namespace Fire_Sales___Sales_Management_System.Data_Access.Repositories
 
             return _db.ExecuteToList<Category>(query, parameters);
         }
-    }
+
+        
+        public Category GetByName(string name)
+        {
+            string query = "SELECT * FROM Category WHERE Name = @Name";
+            var parameters = new Dictionary<string, object>
+            {
+                { "@Name", name }
+            };
+            var result = _db.ExecuteToList<Category>(query, parameters);
+            return result.Count > 0 ? result[0] : null;
+        }
 }
+          }

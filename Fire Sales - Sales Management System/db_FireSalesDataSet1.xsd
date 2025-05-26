@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="db_FireSalesDataSet1" targetNamespace="http://tempuri.org/db_FireSalesDataSet1.xsd" xmlns:mstns="http://tempuri.org/db_FireSalesDataSet1.xsd" xmlns="http://tempuri.org/db_FireSalesDataSet1.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="db_FireSalesConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="db_FireSalesConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Fire_Sales___Sales_Management_System.Properties.Settings.GlobalReference.Default.db_FireSalesConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="vw_TransactionLogWithUserTableAdapter" GeneratorDataComponentClassName="vw_TransactionLogWithUserTableAdapter" Name="vw_TransactionLogWithUser" UserDataComponentName="vw_TransactionLogWithUserTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="db_FireSalesConnectionString (Settings)" DbObjectName="db_FireSales.dbo.vw_TransactionLogWithUser" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT TransactionLogID, TransactionType, TransactionTypeArabic, ReferenceID, Amount, Date, CreatedByUsername, UserRole, Note FROM dbo.vw_TransactionLogWithUser</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="TransactionLogID" DataSetColumn="TransactionLogID" />
+              <Mapping SourceColumn="TransactionType" DataSetColumn="TransactionType" />
+              <Mapping SourceColumn="TransactionTypeArabic" DataSetColumn="TransactionTypeArabic" />
+              <Mapping SourceColumn="ReferenceID" DataSetColumn="ReferenceID" />
+              <Mapping SourceColumn="Amount" DataSetColumn="Amount" />
+              <Mapping SourceColumn="Date" DataSetColumn="Date" />
+              <Mapping SourceColumn="CreatedByUsername" DataSetColumn="CreatedByUsername" />
+              <Mapping SourceColumn="UserRole" DataSetColumn="UserRole" />
+              <Mapping SourceColumn="Note" DataSetColumn="Note" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="db_FireSalesDataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_UserDSName="db_FireSalesDataSet1" msprop:Generator_DataSetName="db_FireSalesDataSet1">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="vw_TransactionLogWithUser" msprop:Generator_RowEvHandlerName="vw_TransactionLogWithUserRowChangeEventHandler" msprop:Generator_RowDeletedName="vw_TransactionLogWithUserRowDeleted" msprop:Generator_RowDeletingName="vw_TransactionLogWithUserRowDeleting" msprop:Generator_RowEvArgName="vw_TransactionLogWithUserRowChangeEvent" msprop:Generator_TablePropName="vw_TransactionLogWithUser" msprop:Generator_RowChangedName="vw_TransactionLogWithUserRowChanged" msprop:Generator_RowChangingName="vw_TransactionLogWithUserRowChanging" msprop:Generator_TableClassName="vw_TransactionLogWithUserDataTable" msprop:Generator_RowClassName="vw_TransactionLogWithUserRow" msprop:Generator_TableVarName="tablevw_TransactionLogWithUser" msprop:Generator_UserTableName="vw_TransactionLogWithUser">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="TransactionLogID" msprop:Generator_ColumnPropNameInRow="TransactionLogID" msprop:Generator_ColumnPropNameInTable="TransactionLogIDColumn" msprop:Generator_ColumnVarNameInTable="columnTransactionLogID" msprop:Generator_UserColumnName="TransactionLogID" type="xs:int" />
+              <xs:element name="TransactionType" msprop:Generator_ColumnPropNameInRow="TransactionType" msprop:Generator_ColumnPropNameInTable="TransactionTypeColumn" msprop:Generator_ColumnVarNameInTable="columnTransactionType" msprop:Generator_UserColumnName="TransactionType">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TransactionTypeArabic" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInRow="TransactionTypeArabic" msprop:Generator_ColumnPropNameInTable="TransactionTypeArabicColumn" msprop:Generator_ColumnVarNameInTable="columnTransactionTypeArabic" msprop:Generator_UserColumnName="TransactionTypeArabic" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ReferenceID" msprop:Generator_ColumnPropNameInRow="ReferenceID" msprop:Generator_ColumnPropNameInTable="ReferenceIDColumn" msprop:Generator_ColumnVarNameInTable="columnReferenceID" msprop:Generator_UserColumnName="ReferenceID" type="xs:int" />
+              <xs:element name="Amount" msprop:Generator_ColumnPropNameInRow="Amount" msprop:Generator_ColumnPropNameInTable="AmountColumn" msprop:Generator_ColumnVarNameInTable="columnAmount" msprop:Generator_UserColumnName="Amount" type="xs:decimal" />
+              <xs:element name="Date" msprop:Generator_ColumnPropNameInRow="Date" msprop:Generator_ColumnPropNameInTable="DateColumn" msprop:Generator_ColumnVarNameInTable="columnDate" msprop:Generator_UserColumnName="Date" type="xs:dateTime" />
+              <xs:element name="CreatedByUsername" msprop:Generator_ColumnPropNameInRow="CreatedByUsername" msprop:Generator_ColumnPropNameInTable="CreatedByUsernameColumn" msprop:Generator_ColumnVarNameInTable="columnCreatedByUsername" msprop:Generator_UserColumnName="CreatedByUsername">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="UserRole" msprop:Generator_ColumnPropNameInRow="UserRole" msprop:Generator_ColumnPropNameInTable="UserRoleColumn" msprop:Generator_ColumnVarNameInTable="columnUserRole" msprop:Generator_UserColumnName="UserRole">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Note" msprop:Generator_ColumnPropNameInRow="Note" msprop:Generator_ColumnPropNameInTable="NoteColumn" msprop:Generator_ColumnVarNameInTable="columnNote" msprop:Generator_UserColumnName="Note" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:vw_TransactionLogWithUser" />
+      <xs:field xpath="mstns:TransactionLogID" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

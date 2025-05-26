@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.mainPanel = new System.Windows.Forms.Panel();
+            this.ReturnAmountTB = new Guna.UI2.WinForms.Guna2TextBox();
             this.backButton = new Guna.UI2.WinForms.Guna2Button();
             this.QuantityTB = new Guna.UI2.WinForms.Guna2TextBox();
             this.productsCB = new Guna.UI2.WinForms.Guna2ComboBox();
@@ -36,7 +37,6 @@
             this.returnProdButton = new Guna.UI2.WinForms.Guna2Button();
             this.titleLBL = new System.Windows.Forms.Label();
             this.subtitleLBL = new System.Windows.Forms.Label();
-            this.ReturnAmountTB = new Guna.UI2.WinForms.Guna2TextBox();
             this.mainPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logoPB)).BeginInit();
             this.SuspendLayout();
@@ -54,11 +54,35 @@
             this.mainPanel.Controls.Add(this.subtitleLBL);
             this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mainPanel.Location = new System.Drawing.Point(0, 0);
-            this.mainPanel.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.mainPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.mainPanel.Name = "mainPanel";
-            this.mainPanel.Size = new System.Drawing.Size(1500, 750);
+            this.mainPanel.Size = new System.Drawing.Size(875, 480);
             this.mainPanel.TabIndex = 1;
             this.mainPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.Panel1_Paint);
+            // 
+            // ReturnAmountTB
+            // 
+            this.ReturnAmountTB.Animated = true;
+            this.ReturnAmountTB.BorderRadius = 10;
+            this.ReturnAmountTB.BorderThickness = 0;
+            this.ReturnAmountTB.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.ReturnAmountTB.DefaultText = "";
+            this.ReturnAmountTB.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.ReturnAmountTB.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.ReturnAmountTB.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.ReturnAmountTB.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.ReturnAmountTB.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.ReturnAmountTB.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.ReturnAmountTB.ForeColor = System.Drawing.Color.Black;
+            this.ReturnAmountTB.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.ReturnAmountTB.Location = new System.Drawing.Point(383, 260);
+            this.ReturnAmountTB.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
+            this.ReturnAmountTB.Name = "ReturnAmountTB";
+            this.ReturnAmountTB.PlaceholderForeColor = System.Drawing.Color.Gray;
+            this.ReturnAmountTB.PlaceholderText = "Return  Amount";
+            this.ReturnAmountTB.SelectedText = "";
+            this.ReturnAmountTB.Size = new System.Drawing.Size(377, 44);
+            this.ReturnAmountTB.TabIndex = 23;
             // 
             // backButton
             // 
@@ -70,10 +94,10 @@
             this.backButton.FillColor = System.Drawing.Color.Black;
             this.backButton.Font = new System.Drawing.Font("Cairo Light", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.backButton.ForeColor = System.Drawing.Color.White;
-            this.backButton.Location = new System.Drawing.Point(-28, 23);
-            this.backButton.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.backButton.Location = new System.Drawing.Point(-16, 15);
+            this.backButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.backButton.Name = "backButton";
-            this.backButton.Size = new System.Drawing.Size(354, 56);
+            this.backButton.Size = new System.Drawing.Size(206, 36);
             this.backButton.TabIndex = 22;
             this.backButton.Text = "Back to home Page";
             this.backButton.Click += new System.EventHandler(this.BackButton_Click);
@@ -93,13 +117,13 @@
             this.QuantityTB.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.QuantityTB.ForeColor = System.Drawing.Color.Black;
             this.QuantityTB.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.QuantityTB.Location = new System.Drawing.Point(196, 407);
-            this.QuantityTB.Margin = new System.Windows.Forms.Padding(12, 12, 12, 12);
+            this.QuantityTB.Location = new System.Drawing.Point(114, 260);
+            this.QuantityTB.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
             this.QuantityTB.Name = "QuantityTB";
             this.QuantityTB.PlaceholderForeColor = System.Drawing.Color.Gray;
             this.QuantityTB.PlaceholderText = "Quantity";
             this.QuantityTB.SelectedText = "";
-            this.QuantityTB.Size = new System.Drawing.Size(418, 69);
+            this.QuantityTB.Size = new System.Drawing.Size(244, 44);
             this.QuantityTB.TabIndex = 19;
             this.QuantityTB.TextChanged += new System.EventHandler(this.CostPriceTB_TextChanged);
             // 
@@ -118,10 +142,10 @@
             "Product 1",
             "Product 2",
             "Product 3"});
-            this.productsCB.Location = new System.Drawing.Point(196, 308);
-            this.productsCB.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.productsCB.Location = new System.Drawing.Point(114, 197);
+            this.productsCB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.productsCB.Name = "productsCB";
-            this.productsCB.Size = new System.Drawing.Size(1108, 36);
+            this.productsCB.Size = new System.Drawing.Size(648, 36);
             this.productsCB.StartIndex = 0;
             this.productsCB.TabIndex = 18;
             this.productsCB.SelectedIndexChanged += new System.EventHandler(this.ProductsCB_SelectedIndexChanged);
@@ -129,12 +153,12 @@
             // logoPB
             // 
             this.logoPB.FillColor = System.Drawing.Color.Black;
-            this.logoPB.Image = global::LoginView.Properties.Resources.box;
+            this.logoPB.Image = global::Fire_Sales___Sales_Management_System.Properties.Resources.box;
             this.logoPB.ImageRotate = 0F;
-            this.logoPB.Location = new System.Drawing.Point(686, 56);
-            this.logoPB.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.logoPB.Location = new System.Drawing.Point(400, 36);
+            this.logoPB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.logoPB.Name = "logoPB";
-            this.logoPB.Size = new System.Drawing.Size(128, 125);
+            this.logoPB.Size = new System.Drawing.Size(75, 80);
             this.logoPB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.logoPB.TabIndex = 15;
             this.logoPB.TabStop = false;
@@ -151,10 +175,10 @@
             this.returnProdButton.FillColor = System.Drawing.Color.Black;
             this.returnProdButton.Font = new System.Drawing.Font("Cairo", 9.749999F, System.Drawing.FontStyle.Bold);
             this.returnProdButton.ForeColor = System.Drawing.Color.Tan;
-            this.returnProdButton.Location = new System.Drawing.Point(542, 551);
-            this.returnProdButton.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.returnProdButton.Location = new System.Drawing.Point(316, 353);
+            this.returnProdButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.returnProdButton.Name = "returnProdButton";
-            this.returnProdButton.Size = new System.Drawing.Size(416, 69);
+            this.returnProdButton.Size = new System.Drawing.Size(243, 44);
             this.returnProdButton.TabIndex = 14;
             this.returnProdButton.Text = "Return Product";
             this.returnProdButton.Click += new System.EventHandler(this.Guna2Button1_Click);
@@ -165,10 +189,10 @@
             this.titleLBL.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.titleLBL.Font = new System.Drawing.Font("Cairo Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.titleLBL.ForeColor = System.Drawing.Color.White;
-            this.titleLBL.Location = new System.Drawing.Point(571, 167);
-            this.titleLBL.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.titleLBL.Location = new System.Drawing.Point(333, 107);
+            this.titleLBL.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.titleLBL.Name = "titleLBL";
-            this.titleLBL.Size = new System.Drawing.Size(358, 72);
+            this.titleLBL.Size = new System.Drawing.Size(227, 45);
             this.titleLBL.TabIndex = 4;
             this.titleLBL.Text = "Return Product Page";
             this.titleLBL.Click += new System.EventHandler(this.TitleLBL_Click);
@@ -180,48 +204,24 @@
             this.subtitleLBL.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.subtitleLBL.Font = new System.Drawing.Font("Cairo", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.subtitleLBL.ForeColor = System.Drawing.Color.White;
-            this.subtitleLBL.Location = new System.Drawing.Point(550, 223);
-            this.subtitleLBL.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.subtitleLBL.Location = new System.Drawing.Point(321, 143);
+            this.subtitleLBL.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.subtitleLBL.Name = "subtitleLBL";
-            this.subtitleLBL.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
-            this.subtitleLBL.Size = new System.Drawing.Size(400, 49);
+            this.subtitleLBL.Padding = new System.Windows.Forms.Padding(12, 0, 12, 0);
+            this.subtitleLBL.Size = new System.Drawing.Size(257, 32);
             this.subtitleLBL.TabIndex = 3;
             this.subtitleLBL.Text = "Choose The Product To Return";
             this.subtitleLBL.Click += new System.EventHandler(this.SubtitleLBL_Click);
             // 
-            // ReturnAmountTB
-            // 
-            this.ReturnAmountTB.Animated = true;
-            this.ReturnAmountTB.BorderRadius = 10;
-            this.ReturnAmountTB.BorderThickness = 0;
-            this.ReturnAmountTB.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.ReturnAmountTB.DefaultText = "";
-            this.ReturnAmountTB.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.ReturnAmountTB.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.ReturnAmountTB.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.ReturnAmountTB.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.ReturnAmountTB.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.ReturnAmountTB.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.ReturnAmountTB.ForeColor = System.Drawing.Color.Black;
-            this.ReturnAmountTB.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.ReturnAmountTB.Location = new System.Drawing.Point(657, 407);
-            this.ReturnAmountTB.Margin = new System.Windows.Forms.Padding(12);
-            this.ReturnAmountTB.Name = "ReturnAmountTB";
-            this.ReturnAmountTB.PlaceholderForeColor = System.Drawing.Color.Gray;
-            this.ReturnAmountTB.PlaceholderText = "Return  Amount";
-            this.ReturnAmountTB.SelectedText = "";
-            this.ReturnAmountTB.Size = new System.Drawing.Size(647, 69);
-            this.ReturnAmountTB.TabIndex = 23;
-            // 
             // ReturnProduct
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1500, 750);
+            this.ClientSize = new System.Drawing.Size(875, 480);
             this.Controls.Add(this.mainPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.Name = "ReturnProduct";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
