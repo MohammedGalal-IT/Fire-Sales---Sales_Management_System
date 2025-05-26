@@ -11,6 +11,8 @@ namespace Fire_Sales___Sales_Management_System.Business_Logic.Interfaces
     {
         List<Product> GetAllProducts();
         Product GetProductById(int id);
+        Product GetProductByName(string name);
+        Product GetProductByCategoryName(string categoryName);
         bool CreateProduct(Product product);
         bool UpdateProduct(Product product);
         bool DeleteProduct(int id);

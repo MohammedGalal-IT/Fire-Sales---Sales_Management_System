@@ -17,6 +17,7 @@ namespace Fire_Sales___Sales_Management_System.Presentation.Views
         public PurchasePageViewForm()
         {
             InitializeComponent();
+            new Guna.UI2.WinForms.Guna2ShadowForm(this);
         }
 
         private void PictureBox1_Click(object sender, EventArgs e)
@@ -56,6 +57,28 @@ namespace Fire_Sales___Sales_Management_System.Presentation.Views
         private void titleLBL_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void PurchasePageViewForm_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'db_FireSalesDataSet.PurchaseItem' table. You can move, or remove it, as needed.
+            this.purchaseItemTableAdapter.Fill(this.db_FireSalesDataSet.PurchaseItem);
+
+        }
+
+        private void guna2Panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void backButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void guna2Button1_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

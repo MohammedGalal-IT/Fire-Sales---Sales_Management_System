@@ -72,6 +72,7 @@ namespace Fire_Sales___Sales_Management_System.Business_Logic.Controllers
                 _view.LoginSuccess($"Welcome {user.Username}, login Successfully");
                 //this._view.user = user;
                 new MainView2(user).Show();
+                signinForm.CurrentUser = user; // Set the current user
                 this._view.Hide(); 
             }
             else

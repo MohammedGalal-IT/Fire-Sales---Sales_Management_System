@@ -128,5 +128,31 @@ namespace Fire_Sales___Sales_Management_System.Data_Access.Repositories
             };
             return _db.ExecuteToList<Product>(query, parameters);
         }
+
+        public Product GetByCategoryName(string categoryName)
+        {
+            string query = @"
+                SELECT p.* 
+                FROM Product p
+                JOIN Category c ON p.CategoryID = c.CategoryID
+                WHERE c.Name LIKE @CategoryName";
+            var parameters = new Dictionary<string, object>
+            {
+                { "@CategoryName", "%" + categoryName + "%" }
+            };
+            var result = _db.ExecuteToList<Product>(query, parameters);
+            return result.Count > 0 ? result[0] : null;
+        }
+
+        public Product GetByName(string name)
+        {
+            string query = "SELECT * FROM Product WHERE Name = @Name";
+            var parameters = new Dictionary<string, object>
+            {
+                { "@Name", name }
+            };
+            var result = _db.ExecuteToList<Product>(query, parameters);
+            return result.Count > 0 ? result[0] : null;
+        }
     }
 }

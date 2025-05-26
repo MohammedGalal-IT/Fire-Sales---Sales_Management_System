@@ -41,6 +41,7 @@
             this.db_FireSalesDataSet = new Fire_Sales___Sales_Management_System.db_FireSalesDataSet();
             this.backButton = new Guna.UI2.WinForms.Guna2Button();
             this.txtCategoryName = new Guna.UI2.WinForms.Guna2TextBox();
+            this.logoPB = new Guna.UI2.WinForms.Guna2PictureBox();
             this.btnAdd = new Guna.UI2.WinForms.Guna2Button();
             this.txtDescription = new Guna.UI2.WinForms.Guna2TextBox();
             this.titleLBL = new System.Windows.Forms.Label();
@@ -48,14 +49,13 @@
             this.dbFireSalesDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dbFireSalesDataSetBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.categoryTableAdapter = new Fire_Sales___Sales_Management_System.db_FireSalesDataSetTableAdapters.CategoryTableAdapter();
-            this.logoPB = new Guna.UI2.WinForms.Guna2PictureBox();
             this.mainPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoryBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.db_FireSalesDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.logoPB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dbFireSalesDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dbFireSalesDataSetBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.logoPB)).BeginInit();
             this.SuspendLayout();
             // 
             // mainPanel
@@ -86,13 +86,13 @@
             this.guna2DataGridView1.AutoGenerateColumns = false;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Tahoma", 8F);
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Cairo", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.DimGray;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.guna2DataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.guna2DataGridView1.ColumnHeadersHeight = 19;
+            this.guna2DataGridView1.ColumnHeadersHeight = 25;
             this.guna2DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.guna2DataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.categoryIDDataGridViewTextBoxColumn,
@@ -101,7 +101,7 @@
             this.guna2DataGridView1.DataSource = this.categoryBindingSource;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Tahoma", 8F);
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
@@ -128,7 +128,7 @@
             this.guna2DataGridView1.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Tahoma", 8F);
             this.guna2DataGridView1.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
             this.guna2DataGridView1.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.guna2DataGridView1.ThemeStyle.HeaderStyle.Height = 19;
+            this.guna2DataGridView1.ThemeStyle.HeaderStyle.Height = 25;
             this.guna2DataGridView1.ThemeStyle.ReadOnly = true;
             this.guna2DataGridView1.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
             this.guna2DataGridView1.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
@@ -215,6 +215,19 @@
             this.txtCategoryName.TabIndex = 16;
             this.txtCategoryName.TextChanged += new System.EventHandler(this.txtCategoryName_TextChanged);
             // 
+            // logoPB
+            // 
+            this.logoPB.FillColor = System.Drawing.Color.Black;
+            this.logoPB.Image = global::Fire_Sales___Sales_Management_System.Properties.Resources.category;
+            this.logoPB.ImageRotate = 0F;
+            this.logoPB.Location = new System.Drawing.Point(400, 36);
+            this.logoPB.Margin = new System.Windows.Forms.Padding(4);
+            this.logoPB.Name = "logoPB";
+            this.logoPB.Size = new System.Drawing.Size(75, 80);
+            this.logoPB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.logoPB.TabIndex = 15;
+            this.logoPB.TabStop = false;
+            // 
             // btnAdd
             // 
             this.btnAdd.Animated = true;
@@ -300,19 +313,6 @@
             // 
             this.categoryTableAdapter.ClearBeforeFill = true;
             // 
-            // logoPB
-            // 
-            this.logoPB.FillColor = System.Drawing.Color.Black;
-            this.logoPB.Image = global::Fire_Sales___Sales_Management_System.Properties.Resources.category;
-            this.logoPB.ImageRotate = 0F;
-            this.logoPB.Location = new System.Drawing.Point(400, 36);
-            this.logoPB.Margin = new System.Windows.Forms.Padding(4);
-            this.logoPB.Name = "logoPB";
-            this.logoPB.Size = new System.Drawing.Size(75, 80);
-            this.logoPB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.logoPB.TabIndex = 15;
-            this.logoPB.TabStop = false;
-            // 
             // AddNewCategoryForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -332,9 +332,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoryBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.db_FireSalesDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.logoPB)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dbFireSalesDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dbFireSalesDataSetBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.logoPB)).EndInit();
             this.ResumeLayout(false);
 
         }

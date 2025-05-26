@@ -28,6 +28,16 @@ namespace Fire_Sales___Sales_Management_System.Business_Logic.Services
             return _productRepository.GetById(id);
         }
 
+        public Product GetProductByName(string name)
+        {
+            return _productRepository.GetByName(name);
+        }
+
+        public Product GetProductByCategoryName(string categoryName)
+        {
+            return _productRepository.GetByCategoryName(categoryName);
+        }
+
         public bool CreateProduct(Product product)
         {
             return _productRepository.Add(product) > 0;

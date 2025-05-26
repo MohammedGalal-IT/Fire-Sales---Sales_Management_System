@@ -25,14 +25,28 @@ namespace Fire_Sales___Sales_Management_System.Presentation.Views
         ICategoryService categoryService;
         IProductRepository productRepository;
         IProductService productService;
+        ISalesInvoiceRepository invoiceRepository;
+        ISalesItemRepository salesItemRepository;
+        ISalesService salesService;
+        ITransactionLogRepository transactionLogRepository;
+        ITransactionLogService transactionLogService;
 
         public SalePageViewForm()
         {
             InitializeComponent();
+            new Guna.UI2.WinForms.Guna2ShadowForm(this);
             categoryRepository = new CategoryRepository(db);
             categoryService = new CategoryService(categoryRepository);
             productRepository = new ProductRepository(db);
             productService = new ProductService(productRepository);
+
+            invoiceRepository = new SalesInvoiceRepository(db);
+            salesItemRepository = new SalesItemRepository(db);
+            salesService = new SalesService(invoiceRepository, salesItemRepository);
+
+            transactionLogRepository = new TransactionLogRepository(db);
+            transactionLogService = new TransactionLogService(transactionLogRepository);
+
 
         }
 
@@ -55,8 +69,121 @@ namespace Fire_Sales___Sales_Management_System.Presentation.Views
 
         }
 
+        private string GenerateInvoiceNumber()
+        {
+            // Format: SAL-YYYYMMDDHHmmssff
+            return "SAL-" + DateTime.Now.ToString("yyyyMMddHHmmssff");
+        }
+
         private void Guna2Button1_Click(object sender, EventArgs e)
         {
+            string invoiceNumber = GenerateInvoiceNumber();
+            lblInvoiceNunber.Text = invoiceNumber;
+
+            SalesInvoice invoice = new SalesInvoice()
+            {
+                InvoiceNumber = invoiceNumber ,
+                Date = DateTime.Now,
+                TotalAmount = 0m,
+                CreatedBy = signinForm.CurrentUser.UserID,
+
+            };
+            salesService.CreateInvoice(invoice);
+
+            decimal totalAmount = 0m;
+            decimal totalDiscount = 0m;
+
+
+            foreach (DataGridViewRow row in guna2DataGridView1.Rows)
+            {
+                // Skip the new row placeholder if AllowUserToAddRows is true
+                if (row.IsNewRow) continue;
+
+                // Access cell values by index or column name
+                var productName = row.Cells[0].Value?.ToString();
+                var categoryName = row.Cells[1].Value?.ToString();
+                var quantity = row.Cells[2].Value != null ? Convert.ToInt32(row.Cells[2].Value) : 0;
+                var price = row.Cells[3].Value != null ? Convert.ToDecimal(row.Cells[3].Value) : 0m;
+
+                SalesItem item = new SalesItem()
+                {
+                    SalesInvoiceID = salesService.GetByInvoiceNumber(invoiceNumber).SalesInvoiceID,
+                    ProductID = productService.GetProductByName(ltvProducts.SelectedItems[0].Text).ProductID,
+                    Quantity = quantity,
+                    CostPrice = price,
+                    Discount = txtDiscount.Text == "" ? 0m : int.Parse(txtQaunity.Text),
+
+                };
+                totalAmount += price;
+                totalDiscount += item.Discount;
+
+                salesService.AddSalesItem(item);
+
+                //------------------------
+                // Get the product
+                var product = productService.GetProductByName(productName);
+                // Decrease stock
+                product.StockQuantity -= quantity;
+                // Update the product in the database
+                productService.UpdateProduct(product);
+            }
+
+            // Update the invoice with total amount and discount
+            invoice.TotalAmount = totalAmount - totalDiscount;
+
+
+            //string query = @"
+            //    UPDATE SalesInvoice SET 
+            //        TotalAmount = @TotalAmount
+            //    WHERE SalesInvoiceID = @ID";
+
+            //var parameters = new Dictionary<string, object>
+            //{
+            //    { "@TotalAmount", invoice.TotalAmount },
+            //    { "@ID", salesService.GetByInvoiceNumber(invoiceNumber).SalesInvoiceID }
+            //};
+
+            // db.ExecuteNonQuery(query, parameters);
+
+
+            
+            if (salesService.UpdateInvoice(new SalesInvoice()
+            {
+                SalesInvoiceID = salesService.GetByInvoiceNumber(invoiceNumber).SalesInvoiceID,
+                InvoiceNumber = invoice.InvoiceNumber,
+                Date = invoice.Date,
+                TotalAmount = invoice.TotalAmount,
+                CreatedBy = invoice.CreatedBy
+
+            }))
+            {
+                MessageBox.Show($"Invoice {invoice.InvoiceNumber} created successfully!\nTotal Amount: {totalAmount:C}\nTotal Discount: {totalDiscount:C}", "Invoice Created", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
+
+            // add Transation Log
+            //transactionLogService.Add(new TransactionLog()
+            //{
+            //    TransactionType = TransactionType.Sale,
+            //    ReferenceID = salesService.GetByInvoiceNumber(invoiceNumber).SalesInvoiceID,
+            //    Amount = invoice.TotalAmount,
+            //    Date = DateTime.Now,
+            //    CreatedBy = signinForm.CurrentUser.UserID,
+            //    Note = $"Sale Invoice {invoice.InvoiceNumber} created with total amount {invoice.TotalAmount:C}."
+
+            //});
+
+
+            // clear the graidview after adding the invoice
+            guna2DataGridView1.Rows.Clear();
+
+            // refrech the list view
+            refrechListView();
+
+
+
+
+
 
         }
 
@@ -64,6 +191,9 @@ namespace Fire_Sales___Sales_Management_System.Presentation.Views
         {
 
         }
+
+        
+
 
         private void SalePageViewForm_Load(object sender, EventArgs e)
         {
@@ -78,11 +208,11 @@ namespace Fire_Sales___Sales_Management_System.Presentation.Views
             }
         }
 
-        private void cbxCategory_SelectedIndexChanged(object sender, EventArgs e)
+        private void refrechListView()
         {
             var c = categoryService.GetCategoryByName(cbxCategory.SelectedItem.ToString());
             var products = productService.GetByCategoryId(c.CategoryID);
-            // how to fill the listView ?
+
 
             ltvProducts.Items.Clear();
 
@@ -93,6 +223,11 @@ namespace Fire_Sales___Sales_Management_System.Presentation.Views
                 item.SubItems.Add(product.StockQuantity.ToString());
                 ltvProducts.Items.Add(item);
             }
+        }
+
+        private void cbxCategory_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            refrechListView();
 
         }
 
@@ -100,15 +235,37 @@ namespace Fire_Sales___Sales_Management_System.Presentation.Views
         {
             try
             {
-                var item = (ListViewItem)this.ltvProducts.SelectedItems[0];
+                // it shows an exception here way
+                if (ltvProducts.SelectedItems.Count == 0)
+                {
+                    MessageBox.Show("Please select a product from the list.", "No Product Selected");
+                    return;
+                }
+                var item = (ListViewItem) this.ltvProducts.SelectedItems[0];
 
                 if (item != null)
                 {
                     string productName = item.Text;
-                    decimal price = decimal.Parse(item.SubItems[1].Text, System.Globalization.NumberStyles.Currency);
-                    int quantity = int.Parse(item.SubItems[2].Text);
-                    // Here you can add the logic to handle the sale, e.g., adding to a cart or processing the sale
+                    int quantity = txtQaunity.Text == "" ? 1 : int.Parse(txtQaunity.Text);
+
+                    if(quantity > int.Parse(item.SubItems[2].Text)) {
+                        MessageBox.Show("Insufficient stock available.", "Stock Error");
+                        txtQaunity.Focus();
+                        return;
+                    }
+                    decimal price = decimal.Parse(item.SubItems[1].Text, System.Globalization.NumberStyles.Currency) * quantity;
+                    
                     MessageBox.Show($"Product: {productName}\nPrice: {price:C}\nQuantity: {quantity}", "Sale Details");
+
+                    guna2DataGridView1.Rows.Add(
+                            productName,
+                            cbxCategory.SelectedItem.ToString(),
+                            quantity,
+                            price,
+                            txtDiscount.Text == "" ? 0 : int.Parse(txtDiscount.Text)
+                        );
+
+
                 }
                 else
                 {
@@ -117,8 +274,25 @@ namespace Fire_Sales___Sales_Management_System.Presentation.Views
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Please Select an Items from the list","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message + "" + ex.StackTrace);
             }
+
+            // clear fileds
+            txtQaunity.Clear();
+            txtDiscount.Clear();
+            txtQaunity.Focus();
+
+
+
+        }
+
+        private void backButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void noteLBL_Click(object sender, EventArgs e)
+        {
 
         }
     }

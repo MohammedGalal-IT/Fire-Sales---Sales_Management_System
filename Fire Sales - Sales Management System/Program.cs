@@ -24,7 +24,7 @@ namespace Fire_Sales___Sales_Management_System
             signinForm s = new signinForm();
             //AddNewProductForm a = new AddNewProductForm();
             //AddNewCategoryForm b = new AddNewCategoryForm();
-            Application.Run(new SalePageViewForm());
+            Application.Run(s);
 
             //Application.Run(new signupForm());
             //Application.Run(new frMainView(s.user));

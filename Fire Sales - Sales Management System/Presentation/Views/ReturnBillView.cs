@@ -17,6 +17,7 @@ namespace Fire_Sales___Sales_Management_System
         public ReturnBillView()
         {
             InitializeComponent();
+            new Guna.UI2.WinForms.Guna2ShadowForm(this);
         }
 
         private void PictureBox1_Click(object sender, EventArgs e)
@@ -50,7 +51,7 @@ namespace Fire_Sales___Sales_Management_System
 
         private void BackButton_Click(object sender, EventArgs e)
         {
-
+            this.Close(); 
         }
 
         private void ProductsCB_SelectedIndexChanged(object sender, EventArgs e)
@@ -70,6 +71,13 @@ namespace Fire_Sales___Sales_Management_System
 
         private void SubtitleLBL_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void ReturnBillView_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'db_FireSalesDataSet.SalesReturn' table. You can move, or remove it, as needed.
+            this.salesReturnTableAdapter.Fill(this.db_FireSalesDataSet.SalesReturn);
 
         }
     }

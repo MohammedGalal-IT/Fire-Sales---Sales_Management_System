@@ -28,33 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem(new System.Windows.Forms.ListViewItem.ListViewSubItem[] {
-            new System.Windows.Forms.ListViewItem.ListViewSubItem(null, "1", System.Drawing.Color.Gray, System.Drawing.Color.White, new System.Drawing.Font("Cairo", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)))),
-            new System.Windows.Forms.ListViewItem.ListViewSubItem(null, "1st Product ( 3 P )", System.Drawing.SystemColors.WindowText, System.Drawing.SystemColors.InactiveCaption, new System.Drawing.Font("Cairo", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)))),
-            new System.Windows.Forms.ListViewItem.ListViewSubItem(null, "1205 $", System.Drawing.SystemColors.WindowText, System.Drawing.SystemColors.InactiveCaption, new System.Drawing.Font("Cairo", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0))))}, -1);
-            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem(new string[] {
-            "2",
-            "2nd Product ( 5p )",
-            "21251 $"}, -1, System.Drawing.Color.Gray, System.Drawing.Color.Empty, null);
-            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem(new string[] {
-            "3",
-            "3rd Product ( 2 p )",
-            "500 $"}, -1, System.Drawing.Color.Gray, System.Drawing.Color.Empty, null);
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.mainPanel = new System.Windows.Forms.Panel();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.productListV = new System.Windows.Forms.ListView();
-            this.Bill_id = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.BillDetails = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.TotalReturnAmount = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ReturnAmountTB = new Guna.UI2.WinForms.Guna2TextBox();
             this.backButton = new Guna.UI2.WinForms.Guna2Button();
             this.logoPB = new Guna.UI2.WinForms.Guna2PictureBox();
             this.returnBillButton = new Guna.UI2.WinForms.Guna2Button();
             this.titleLBL = new System.Windows.Forms.Label();
             this.subtitleLBL = new System.Windows.Forms.Label();
+            this.guna2DataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.db_FireSalesDataSet = new Fire_Sales___Sales_Management_System.db_FireSalesDataSet();
+            this.salesReturnBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.salesReturnTableAdapter = new Fire_Sales___Sales_Management_System.db_FireSalesDataSetTableAdapters.SalesReturnTableAdapter();
+            this.salesReturnIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.salesInvoiceIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.totalRefundAmountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.createdByDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mainPanel.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logoPB)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.db_FireSalesDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.salesReturnBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // mainPanel
@@ -69,7 +69,7 @@
             this.mainPanel.Controls.Add(this.subtitleLBL);
             this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mainPanel.Location = new System.Drawing.Point(0, 0);
-            this.mainPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.mainPanel.Margin = new System.Windows.Forms.Padding(4);
             this.mainPanel.Name = "mainPanel";
             this.mainPanel.Size = new System.Drawing.Size(875, 576);
             this.mainPanel.TabIndex = 1;
@@ -79,49 +79,13 @@
             // 
             this.guna2Panel1.BackColor = System.Drawing.Color.Transparent;
             this.guna2Panel1.BorderRadius = 15;
-            this.guna2Panel1.Controls.Add(this.productListV);
+            this.guna2Panel1.Controls.Add(this.guna2DataGridView1);
             this.guna2Panel1.FillColor = System.Drawing.Color.White;
             this.guna2Panel1.Location = new System.Drawing.Point(114, 205);
-            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(2);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(646, 236);
             this.guna2Panel1.TabIndex = 24;
-            // 
-            // productListV
-            // 
-            this.productListV.BackColor = System.Drawing.Color.White;
-            this.productListV.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.productListV.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.Bill_id,
-            this.BillDetails,
-            this.TotalReturnAmount});
-            this.productListV.HideSelection = false;
-            this.productListV.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem1,
-            listViewItem2,
-            listViewItem3});
-            this.productListV.Location = new System.Drawing.Point(13, 15);
-            this.productListV.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.productListV.Name = "productListV";
-            this.productListV.Size = new System.Drawing.Size(618, 203);
-            this.productListV.TabIndex = 25;
-            this.productListV.UseCompatibleStateImageBehavior = false;
-            this.productListV.View = System.Windows.Forms.View.Details;
-            // 
-            // Bill_id
-            // 
-            this.Bill_id.Text = "Bill ID";
-            this.Bill_id.Width = 77;
-            // 
-            // BillDetails
-            // 
-            this.BillDetails.Text = "Details";
-            this.BillDetails.Width = 277;
-            // 
-            // TotalReturnAmount
-            // 
-            this.TotalReturnAmount.Text = "Total Amount";
-            this.TotalReturnAmount.Width = 166;
             // 
             // ReturnAmountTB
             // 
@@ -158,7 +122,7 @@
             this.backButton.Font = new System.Drawing.Font("Cairo Light", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.backButton.ForeColor = System.Drawing.Color.White;
             this.backButton.Location = new System.Drawing.Point(-16, 15);
-            this.backButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.backButton.Margin = new System.Windows.Forms.Padding(4);
             this.backButton.Name = "backButton";
             this.backButton.Size = new System.Drawing.Size(206, 36);
             this.backButton.TabIndex = 22;
@@ -171,7 +135,7 @@
             this.logoPB.Image = global::Fire_Sales___Sales_Management_System.Properties.Resources.box;
             this.logoPB.ImageRotate = 0F;
             this.logoPB.Location = new System.Drawing.Point(400, 36);
-            this.logoPB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.logoPB.Margin = new System.Windows.Forms.Padding(4);
             this.logoPB.Name = "logoPB";
             this.logoPB.Size = new System.Drawing.Size(75, 80);
             this.logoPB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -191,7 +155,7 @@
             this.returnBillButton.Font = new System.Drawing.Font("Cairo", 9.749999F, System.Drawing.FontStyle.Bold);
             this.returnBillButton.ForeColor = System.Drawing.Color.Tan;
             this.returnBillButton.Location = new System.Drawing.Point(518, 467);
-            this.returnBillButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.returnBillButton.Margin = new System.Windows.Forms.Padding(4);
             this.returnBillButton.Name = "returnBillButton";
             this.returnBillButton.Size = new System.Drawing.Size(243, 44);
             this.returnBillButton.TabIndex = 14;
@@ -228,6 +192,123 @@
             this.subtitleLBL.Text = "Choose The Bill To Return";
             this.subtitleLBL.Click += new System.EventHandler(this.SubtitleLBL_Click);
             // 
+            // guna2DataGridView1
+            // 
+            this.guna2DataGridView1.AllowUserToAddRows = false;
+            this.guna2DataGridView1.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.guna2DataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.guna2DataGridView1.AutoGenerateColumns = false;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Cairo", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.guna2DataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.guna2DataGridView1.ColumnHeadersHeight = 25;
+            this.guna2DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.guna2DataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.salesReturnIDDataGridViewTextBoxColumn,
+            this.salesInvoiceIDDataGridViewTextBoxColumn,
+            this.dateDataGridViewTextBoxColumn,
+            this.totalRefundAmountDataGridViewTextBoxColumn,
+            this.createdByDataGridViewTextBoxColumn});
+            this.guna2DataGridView1.DataSource = this.salesReturnBindingSource;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.guna2DataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
+            this.guna2DataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.guna2DataGridView1.Location = new System.Drawing.Point(3, 6);
+            this.guna2DataGridView1.Name = "guna2DataGridView1";
+            this.guna2DataGridView1.ReadOnly = true;
+            this.guna2DataGridView1.RowHeadersVisible = false;
+            this.guna2DataGridView1.RowHeadersWidth = 51;
+            this.guna2DataGridView1.RowTemplate.Height = 26;
+            this.guna2DataGridView1.Size = new System.Drawing.Size(640, 225);
+            this.guna2DataGridView1.TabIndex = 25;
+            this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
+            this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.guna2DataGridView1.ThemeStyle.BackColor = System.Drawing.Color.White;
+            this.guna2DataGridView1.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.guna2DataGridView1.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.guna2DataGridView1.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.guna2DataGridView1.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Tahoma", 8F);
+            this.guna2DataGridView1.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.guna2DataGridView1.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.guna2DataGridView1.ThemeStyle.HeaderStyle.Height = 25;
+            this.guna2DataGridView1.ThemeStyle.ReadOnly = true;
+            this.guna2DataGridView1.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.guna2DataGridView1.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.guna2DataGridView1.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Tahoma", 8F);
+            this.guna2DataGridView1.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.guna2DataGridView1.ThemeStyle.RowsStyle.Height = 26;
+            this.guna2DataGridView1.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.guna2DataGridView1.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            // 
+            // db_FireSalesDataSet
+            // 
+            this.db_FireSalesDataSet.DataSetName = "db_FireSalesDataSet";
+            this.db_FireSalesDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // salesReturnBindingSource
+            // 
+            this.salesReturnBindingSource.DataMember = "SalesReturn";
+            this.salesReturnBindingSource.DataSource = this.db_FireSalesDataSet;
+            // 
+            // salesReturnTableAdapter
+            // 
+            this.salesReturnTableAdapter.ClearBeforeFill = true;
+            // 
+            // salesReturnIDDataGridViewTextBoxColumn
+            // 
+            this.salesReturnIDDataGridViewTextBoxColumn.DataPropertyName = "SalesReturnID";
+            this.salesReturnIDDataGridViewTextBoxColumn.HeaderText = "SalesReturnID";
+            this.salesReturnIDDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.salesReturnIDDataGridViewTextBoxColumn.Name = "salesReturnIDDataGridViewTextBoxColumn";
+            this.salesReturnIDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // salesInvoiceIDDataGridViewTextBoxColumn
+            // 
+            this.salesInvoiceIDDataGridViewTextBoxColumn.DataPropertyName = "SalesInvoiceID";
+            this.salesInvoiceIDDataGridViewTextBoxColumn.HeaderText = "SalesInvoiceID";
+            this.salesInvoiceIDDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.salesInvoiceIDDataGridViewTextBoxColumn.Name = "salesInvoiceIDDataGridViewTextBoxColumn";
+            this.salesInvoiceIDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // dateDataGridViewTextBoxColumn
+            // 
+            this.dateDataGridViewTextBoxColumn.DataPropertyName = "Date";
+            this.dateDataGridViewTextBoxColumn.HeaderText = "Date";
+            this.dateDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
+            this.dateDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // totalRefundAmountDataGridViewTextBoxColumn
+            // 
+            this.totalRefundAmountDataGridViewTextBoxColumn.DataPropertyName = "TotalRefundAmount";
+            this.totalRefundAmountDataGridViewTextBoxColumn.HeaderText = "TotalRefundAmount";
+            this.totalRefundAmountDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.totalRefundAmountDataGridViewTextBoxColumn.Name = "totalRefundAmountDataGridViewTextBoxColumn";
+            this.totalRefundAmountDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // createdByDataGridViewTextBoxColumn
+            // 
+            this.createdByDataGridViewTextBoxColumn.DataPropertyName = "CreatedBy";
+            this.createdByDataGridViewTextBoxColumn.HeaderText = "CreatedBy";
+            this.createdByDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.createdByDataGridViewTextBoxColumn.Name = "createdByDataGridViewTextBoxColumn";
+            this.createdByDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // ReturnBillView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -236,15 +317,19 @@
             this.ClientSize = new System.Drawing.Size(875, 576);
             this.Controls.Add(this.mainPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "ReturnBillView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login Page";
+            this.Load += new System.EventHandler(this.ReturnBillView_Load);
             this.mainPanel.ResumeLayout(false);
             this.mainPanel.PerformLayout();
             this.guna2Panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.logoPB)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.db_FireSalesDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.salesReturnBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -259,10 +344,15 @@
         private Guna.UI2.WinForms.Guna2Button backButton;
         private Guna.UI2.WinForms.Guna2TextBox ReturnAmountTB;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
-        private System.Windows.Forms.ListView productListV;
-        private System.Windows.Forms.ColumnHeader Bill_id;
-        private System.Windows.Forms.ColumnHeader BillDetails;
-        private System.Windows.Forms.ColumnHeader TotalReturnAmount;
+        private Guna.UI2.WinForms.Guna2DataGridView guna2DataGridView1;
+        private db_FireSalesDataSet db_FireSalesDataSet;
+        private System.Windows.Forms.BindingSource salesReturnBindingSource;
+        private db_FireSalesDataSetTableAdapters.SalesReturnTableAdapter salesReturnTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn salesReturnIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn salesInvoiceIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn totalRefundAmountDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn createdByDataGridViewTextBoxColumn;
     }
 }
 

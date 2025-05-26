@@ -25,6 +25,7 @@ namespace Fire_Sales___Sales_Management_System.Presentation.Views
         public AddNewProductForm()
         {
             InitializeComponent();
+            new Guna.UI2.WinForms.Guna2ShadowForm(this);
 
         }
 

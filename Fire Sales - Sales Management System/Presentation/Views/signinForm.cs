@@ -18,11 +18,13 @@ namespace Fire_Sales___Sales_Management_System.Presentation.Views
     {
         private LoginController _controller; // ---------------------
         public Action<string, string> OnLoginAttempt; //------------------
+        public static User CurrentUser { get; set; } // ---------------------
         public User user { get; set; }
         public signinForm()
         {
             InitializeComponent();
             _controller = new LoginController(this); // ---------------------
+            new Guna.UI2.WinForms.Guna2ShadowForm(this);
         }
 
         private void btnLogin_Click(object sender, EventArgs e) // ---------------------

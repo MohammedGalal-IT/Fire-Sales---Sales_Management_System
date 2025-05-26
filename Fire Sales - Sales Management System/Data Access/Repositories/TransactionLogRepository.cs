@@ -66,7 +66,7 @@ namespace Fire_Sales___Sales_Management_System.Data_Access.Repositories
             var parameters = new Dictionary<string, object>
             {
                 { "@ID", item.TransactionLogID },
-                { "@Type", item.TransactionType },
+                { "@Type", "Sale" }, //item.TransactionType.ToString()
                 { "@ReferenceID", item.ReferenceID },
                 { "@Amount", item.Amount },
                 { "@Date", item.Date },

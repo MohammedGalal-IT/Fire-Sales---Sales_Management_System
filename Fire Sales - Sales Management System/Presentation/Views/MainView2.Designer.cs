@@ -46,7 +46,6 @@
             this.btnCraeteCategory = new Guna.UI2.WinForms.Guna2Button();
             this.txtAddProduct = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
-            this.logoPB = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2CircleButton1 = new Guna.UI2.WinForms.Guna2CircleButton();
             this.subtitleLBL = new System.Windows.Forms.Label();
             this.btnCreate = new Guna.UI2.WinForms.Guna2Button();
@@ -74,7 +73,13 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.titleLBL = new System.Windows.Forms.Label();
+            this.btnProducts = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
+            this.logoPB = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2Button5 = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.db_FireSalesDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.purchaseInvoiceBindingSource)).BeginInit();
@@ -83,7 +88,6 @@
             this.pnlNavBar.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.guna2Panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.logoPB)).BeginInit();
             this.mainPanel.SuspendLayout();
             this.panel1.SuspendLayout();
             this.closePanel.SuspendLayout();
@@ -91,6 +95,7 @@
             this.guna2Panel4.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.logoPB)).BeginInit();
             this.SuspendLayout();
             // 
             // userBindingSource
@@ -147,7 +152,12 @@
             this.flowLayoutPanel1.Controls.Add(this.btnDashBoard);
             this.flowLayoutPanel1.Controls.Add(this.btnCraeteCategory);
             this.flowLayoutPanel1.Controls.Add(this.txtAddProduct);
+            this.flowLayoutPanel1.Controls.Add(this.btnProducts);
             this.flowLayoutPanel1.Controls.Add(this.guna2Button1);
+            this.flowLayoutPanel1.Controls.Add(this.guna2Button2);
+            this.flowLayoutPanel1.Controls.Add(this.guna2Button3);
+            this.flowLayoutPanel1.Controls.Add(this.guna2Button4);
+            this.flowLayoutPanel1.Controls.Add(this.guna2Button5);
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 208);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
@@ -220,23 +230,6 @@
             this.guna2Panel3.Name = "guna2Panel3";
             this.guna2Panel3.Size = new System.Drawing.Size(155, 125);
             this.guna2Panel3.TabIndex = 18;
-            // 
-            // logoPB
-            // 
-            this.logoPB.BackColor = System.Drawing.Color.Transparent;
-            this.logoPB.BorderRadius = 20;
-            this.logoPB.FillColor = System.Drawing.Color.Black;
-            this.logoPB.Image = global::Fire_Sales___Sales_Management_System.Properties.Resources.img;
-            this.logoPB.ImageRotate = 0F;
-            this.logoPB.Location = new System.Drawing.Point(29, 27);
-            this.logoPB.Margin = new System.Windows.Forms.Padding(4);
-            this.logoPB.Name = "logoPB";
-            this.logoPB.Size = new System.Drawing.Size(99, 82);
-            this.logoPB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.logoPB.TabIndex = 16;
-            this.logoPB.TabStop = false;
-            this.logoPB.UseTransparentBackground = true;
-            this.logoPB.Click += new System.EventHandler(this.logoPB_Click);
             // 
             // guna2CircleButton1
             // 
@@ -593,6 +586,25 @@
             this.titleLBL.TabIndex = 4;
             this.titleLBL.Text = "Main Page";
             // 
+            // btnProducts
+            // 
+            this.btnProducts.Animated = true;
+            this.btnProducts.BorderRadius = 5;
+            this.btnProducts.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnProducts.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnProducts.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnProducts.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnProducts.FillColor = System.Drawing.Color.WhiteSmoke;
+            this.btnProducts.Font = new System.Drawing.Font("Cairo", 9.749999F, System.Drawing.FontStyle.Bold);
+            this.btnProducts.ForeColor = System.Drawing.Color.Black;
+            this.btnProducts.Location = new System.Drawing.Point(8, 139);
+            this.btnProducts.Margin = new System.Windows.Forms.Padding(4);
+            this.btnProducts.Name = "btnProducts";
+            this.btnProducts.Size = new System.Drawing.Size(220, 37);
+            this.btnProducts.TabIndex = 14;
+            this.btnProducts.Text = "Sale Products";
+            this.btnProducts.Click += new System.EventHandler(this.txtProducts_Click);
+            // 
             // guna2Button1
             // 
             this.guna2Button1.Animated = true;
@@ -604,13 +616,106 @@
             this.guna2Button1.FillColor = System.Drawing.Color.WhiteSmoke;
             this.guna2Button1.Font = new System.Drawing.Font("Cairo", 9.749999F, System.Drawing.FontStyle.Bold);
             this.guna2Button1.ForeColor = System.Drawing.Color.Black;
-            this.guna2Button1.Location = new System.Drawing.Point(8, 139);
+            this.guna2Button1.Location = new System.Drawing.Point(8, 184);
             this.guna2Button1.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Button1.Name = "guna2Button1";
             this.guna2Button1.Size = new System.Drawing.Size(220, 37);
             this.guna2Button1.TabIndex = 14;
-            this.guna2Button1.Text = "Products";
-            this.guna2Button1.Click += new System.EventHandler(this.txtAddProduct_Click);
+            this.guna2Button1.Text = "Expences";
+            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
+            // 
+            // guna2Button2
+            // 
+            this.guna2Button2.Animated = true;
+            this.guna2Button2.BorderRadius = 5;
+            this.guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button2.FillColor = System.Drawing.Color.WhiteSmoke;
+            this.guna2Button2.Font = new System.Drawing.Font("Cairo", 9.749999F, System.Drawing.FontStyle.Bold);
+            this.guna2Button2.ForeColor = System.Drawing.Color.Black;
+            this.guna2Button2.Location = new System.Drawing.Point(8, 229);
+            this.guna2Button2.Margin = new System.Windows.Forms.Padding(4);
+            this.guna2Button2.Name = "guna2Button2";
+            this.guna2Button2.Size = new System.Drawing.Size(220, 37);
+            this.guna2Button2.TabIndex = 14;
+            this.guna2Button2.Text = "Purchases";
+            this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click);
+            // 
+            // guna2Button3
+            // 
+            this.guna2Button3.Animated = true;
+            this.guna2Button3.BorderRadius = 5;
+            this.guna2Button3.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button3.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button3.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button3.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button3.FillColor = System.Drawing.Color.WhiteSmoke;
+            this.guna2Button3.Font = new System.Drawing.Font("Cairo", 9.749999F, System.Drawing.FontStyle.Bold);
+            this.guna2Button3.ForeColor = System.Drawing.Color.Black;
+            this.guna2Button3.Location = new System.Drawing.Point(8, 274);
+            this.guna2Button3.Margin = new System.Windows.Forms.Padding(4);
+            this.guna2Button3.Name = "guna2Button3";
+            this.guna2Button3.Size = new System.Drawing.Size(220, 37);
+            this.guna2Button3.TabIndex = 14;
+            this.guna2Button3.Text = "Sale Return";
+            this.guna2Button3.Click += new System.EventHandler(this.guna2Button3_Click);
+            // 
+            // guna2Button4
+            // 
+            this.guna2Button4.Animated = true;
+            this.guna2Button4.BorderRadius = 5;
+            this.guna2Button4.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button4.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button4.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button4.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button4.FillColor = System.Drawing.Color.WhiteSmoke;
+            this.guna2Button4.Font = new System.Drawing.Font("Cairo", 9.749999F, System.Drawing.FontStyle.Bold);
+            this.guna2Button4.ForeColor = System.Drawing.Color.Black;
+            this.guna2Button4.Location = new System.Drawing.Point(8, 319);
+            this.guna2Button4.Margin = new System.Windows.Forms.Padding(4);
+            this.guna2Button4.Name = "guna2Button4";
+            this.guna2Button4.Size = new System.Drawing.Size(220, 37);
+            this.guna2Button4.TabIndex = 14;
+            this.guna2Button4.Text = "Purcgase Return";
+            this.guna2Button4.Click += new System.EventHandler(this.guna2Button4_Click);
+            // 
+            // logoPB
+            // 
+            this.logoPB.BackColor = System.Drawing.Color.Transparent;
+            this.logoPB.BorderRadius = 20;
+            this.logoPB.FillColor = System.Drawing.Color.Black;
+            this.logoPB.Image = global::Fire_Sales___Sales_Management_System.Properties.Resources.img;
+            this.logoPB.ImageRotate = 0F;
+            this.logoPB.Location = new System.Drawing.Point(29, 27);
+            this.logoPB.Margin = new System.Windows.Forms.Padding(4);
+            this.logoPB.Name = "logoPB";
+            this.logoPB.Size = new System.Drawing.Size(99, 82);
+            this.logoPB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.logoPB.TabIndex = 16;
+            this.logoPB.TabStop = false;
+            this.logoPB.UseTransparentBackground = true;
+            this.logoPB.Click += new System.EventHandler(this.logoPB_Click);
+            // 
+            // guna2Button5
+            // 
+            this.guna2Button5.Animated = true;
+            this.guna2Button5.BorderRadius = 5;
+            this.guna2Button5.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button5.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button5.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button5.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button5.FillColor = System.Drawing.Color.WhiteSmoke;
+            this.guna2Button5.Font = new System.Drawing.Font("Cairo", 9.749999F, System.Drawing.FontStyle.Bold);
+            this.guna2Button5.ForeColor = System.Drawing.Color.Black;
+            this.guna2Button5.Location = new System.Drawing.Point(8, 364);
+            this.guna2Button5.Margin = new System.Windows.Forms.Padding(4);
+            this.guna2Button5.Name = "guna2Button5";
+            this.guna2Button5.Size = new System.Drawing.Size(220, 37);
+            this.guna2Button5.TabIndex = 14;
+            this.guna2Button5.Text = "Users";
+            this.guna2Button5.Click += new System.EventHandler(this.guna2Button5_Click);
             // 
             // MainView2
             // 
@@ -632,7 +737,6 @@
             this.pnlNavBar.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);
             this.guna2Panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.logoPB)).EndInit();
             this.mainPanel.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -645,6 +749,7 @@
             this.guna2Panel2.PerformLayout();
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.logoPB)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -692,6 +797,11 @@
         private Guna.UI2.WinForms.Guna2Panel guna2Panel3;
         private Guna.UI2.WinForms.Guna2PictureBox logoPB;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private Guna.UI2.WinForms.Guna2Button btnProducts;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private Guna.UI2.WinForms.Guna2Button guna2Button2;
+        private Guna.UI2.WinForms.Guna2Button guna2Button3;
+        private Guna.UI2.WinForms.Guna2Button guna2Button4;
+        private Guna.UI2.WinForms.Guna2Button guna2Button5;
     }
 }

@@ -13,5 +13,7 @@ namespace Fire_Sales___Sales_Management_System.Data_Access.Interfaces
         List<Product> SearchByName(string name);
         Product GetByBarcode(string barcode);
         List<Product> GetByCategoryId(int categoryId);
+        Product GetByCategoryName(string categoryName);
+        Product GetByName(string name);
     }
 }

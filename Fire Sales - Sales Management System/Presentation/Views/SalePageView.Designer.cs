@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.mainPanel = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.noteLBL = new System.Windows.Forms.Label();
+            this.lblInvoiceNunber = new System.Windows.Forms.Label();
             this.ltvProducts = new System.Windows.Forms.ListView();
             this.productName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Price = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -41,8 +41,7 @@
             this.backButton = new Guna.UI2.WinForms.Guna2Button();
             this.logoPB = new Guna.UI2.WinForms.Guna2PictureBox();
             this.saleButton = new Guna.UI2.WinForms.Guna2Button();
-            this.discountTB = new Guna.UI2.WinForms.Guna2TextBox();
-            this.titleLBL = new System.Windows.Forms.Label();
+            this.txtDiscount = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2DataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
             this.pName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -50,7 +49,8 @@
             this.pPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cbxCategory = new Guna.UI2.WinForms.Guna2ComboBox();
             this.stock = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtQaunity = new Guna.UI2.WinForms.Guna2TextBox();
+            this.pDiscount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mainPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logoPB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).BeginInit();
@@ -62,20 +62,19 @@
             this.mainPanel.Controls.Add(this.cbxCategory);
             this.mainPanel.Controls.Add(this.guna2DataGridView1);
             this.mainPanel.Controls.Add(this.panel1);
-            this.mainPanel.Controls.Add(this.noteLBL);
+            this.mainPanel.Controls.Add(this.lblInvoiceNunber);
             this.mainPanel.Controls.Add(this.ltvProducts);
             this.mainPanel.Controls.Add(this.guna2Button1);
             this.mainPanel.Controls.Add(this.backButton);
             this.mainPanel.Controls.Add(this.logoPB);
             this.mainPanel.Controls.Add(this.saleButton);
-            this.mainPanel.Controls.Add(this.guna2TextBox1);
-            this.mainPanel.Controls.Add(this.discountTB);
-            this.mainPanel.Controls.Add(this.titleLBL);
+            this.mainPanel.Controls.Add(this.txtQaunity);
+            this.mainPanel.Controls.Add(this.txtDiscount);
             this.mainPanel.Font = new System.Drawing.Font("Cairo", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mainPanel.Location = new System.Drawing.Point(0, 0);
             this.mainPanel.Margin = new System.Windows.Forms.Padding(4);
             this.mainPanel.Name = "mainPanel";
-            this.mainPanel.Size = new System.Drawing.Size(877, 829);
+            this.mainPanel.Size = new System.Drawing.Size(876, 829);
             this.mainPanel.TabIndex = 1;
             this.mainPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.Panel1_Paint);
             // 
@@ -88,18 +87,18 @@
             this.panel1.Size = new System.Drawing.Size(188, 1);
             this.panel1.TabIndex = 30;
             // 
-            // noteLBL
+            // lblInvoiceNunber
             // 
-            this.noteLBL.AutoSize = true;
-            this.noteLBL.Font = new System.Drawing.Font("Cairo", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.noteLBL.ForeColor = System.Drawing.Color.White;
-            this.noteLBL.Location = new System.Drawing.Point(59, 389);
-            this.noteLBL.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.noteLBL.Name = "noteLBL";
-            this.noteLBL.Padding = new System.Windows.Forms.Padding(12, 0, 12, 0);
-            this.noteLBL.Size = new System.Drawing.Size(206, 32);
-            this.noteLBL.TabIndex = 29;
-            this.noteLBL.Text = "Choose Product to Sale";
+            this.lblInvoiceNunber.AutoSize = true;
+            this.lblInvoiceNunber.Font = new System.Drawing.Font("Cairo", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInvoiceNunber.ForeColor = System.Drawing.Color.White;
+            this.lblInvoiceNunber.Location = new System.Drawing.Point(684, 786);
+            this.lblInvoiceNunber.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblInvoiceNunber.Name = "lblInvoiceNunber";
+            this.lblInvoiceNunber.Padding = new System.Windows.Forms.Padding(12, 0, 12, 0);
+            this.lblInvoiceNunber.Size = new System.Drawing.Size(24, 32);
+            this.lblInvoiceNunber.TabIndex = 29;
+            this.lblInvoiceNunber.Click += new System.EventHandler(this.noteLBL_Click);
             // 
             // ltvProducts
             // 
@@ -162,6 +161,7 @@
             this.backButton.Size = new System.Drawing.Size(206, 36);
             this.backButton.TabIndex = 22;
             this.backButton.Text = "Back to home Page";
+            this.backButton.Click += new System.EventHandler(this.backButton_Click);
             // 
             // logoPB
             // 
@@ -195,73 +195,61 @@
             this.saleButton.Text = "Check Out";
             this.saleButton.Click += new System.EventHandler(this.Guna2Button1_Click);
             // 
-            // discountTB
+            // txtDiscount
             // 
-            this.discountTB.Animated = true;
-            this.discountTB.BorderRadius = 10;
-            this.discountTB.BorderThickness = 0;
-            this.discountTB.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.discountTB.DefaultText = "";
-            this.discountTB.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.discountTB.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.discountTB.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.discountTB.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.discountTB.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.discountTB.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.discountTB.ForeColor = System.Drawing.Color.Black;
-            this.discountTB.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.discountTB.Location = new System.Drawing.Point(504, 549);
-            this.discountTB.Margin = new System.Windows.Forms.Padding(7);
-            this.discountTB.Name = "discountTB";
-            this.discountTB.PlaceholderForeColor = System.Drawing.Color.Gray;
-            this.discountTB.PlaceholderText = "Total Discount";
-            this.discountTB.SelectedText = "";
-            this.discountTB.Size = new System.Drawing.Size(304, 44);
-            this.discountTB.TabIndex = 12;
-            // 
-            // titleLBL
-            // 
-            this.titleLBL.AutoSize = true;
-            this.titleLBL.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.titleLBL.Font = new System.Drawing.Font("Cairo Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.titleLBL.ForeColor = System.Drawing.Color.White;
-            this.titleLBL.Location = new System.Drawing.Point(384, 103);
-            this.titleLBL.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.titleLBL.Name = "titleLBL";
-            this.titleLBL.Size = new System.Drawing.Size(117, 45);
-            this.titleLBL.TabIndex = 4;
-            this.titleLBL.Text = "Sale Page";
+            this.txtDiscount.Animated = true;
+            this.txtDiscount.BorderRadius = 10;
+            this.txtDiscount.BorderThickness = 0;
+            this.txtDiscount.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtDiscount.DefaultText = "";
+            this.txtDiscount.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtDiscount.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtDiscount.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtDiscount.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtDiscount.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtDiscount.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtDiscount.ForeColor = System.Drawing.Color.Black;
+            this.txtDiscount.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtDiscount.Location = new System.Drawing.Point(355, 773);
+            this.txtDiscount.Margin = new System.Windows.Forms.Padding(7);
+            this.txtDiscount.Name = "txtDiscount";
+            this.txtDiscount.PlaceholderForeColor = System.Drawing.Color.Gray;
+            this.txtDiscount.PlaceholderText = "Discount";
+            this.txtDiscount.SelectedText = "";
+            this.txtDiscount.Size = new System.Drawing.Size(94, 39);
+            this.txtDiscount.TabIndex = 12;
             // 
             // guna2DataGridView1
             // 
             this.guna2DataGridView1.AllowUserToAddRows = false;
             this.guna2DataGridView1.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle25.BackColor = System.Drawing.Color.White;
-            this.guna2DataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle25;
-            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle26.BackColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle26.Font = new System.Drawing.Font("Cairo", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle26.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle26.SelectionBackColor = System.Drawing.SystemColors.ActiveBorder;
-            dataGridViewCellStyle26.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle26.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.guna2DataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle26;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
+            this.guna2DataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Cairo", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.ActiveBorder;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.guna2DataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.guna2DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.guna2DataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.pName,
             this.CName,
             this.pQauntity,
-            this.pPrice});
-            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle27.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle27.Font = new System.Drawing.Font("Cairo", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle27.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle27.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle27.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle27.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.guna2DataGridView1.DefaultCellStyle = dataGridViewCellStyle27;
+            this.pPrice,
+            this.pDiscount});
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Cairo", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.guna2DataGridView1.DefaultCellStyle = dataGridViewCellStyle12;
             this.guna2DataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.guna2DataGridView1.Location = new System.Drawing.Point(65, 158);
+            this.guna2DataGridView1.Location = new System.Drawing.Point(69, 158);
             this.guna2DataGridView1.Name = "guna2DataGridView1";
             this.guna2DataGridView1.ReadOnly = true;
             this.guna2DataGridView1.RowHeadersVisible = false;
@@ -340,29 +328,36 @@
             // 
             this.stock.Text = "stock";
             // 
-            // guna2TextBox1
+            // txtQaunity
             // 
-            this.guna2TextBox1.Animated = true;
-            this.guna2TextBox1.BorderRadius = 5;
-            this.guna2TextBox1.BorderThickness = 0;
-            this.guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox1.DefaultText = "";
-            this.guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2TextBox1.ForeColor = System.Drawing.Color.Black;
-            this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.Location = new System.Drawing.Point(263, 773);
-            this.guna2TextBox1.Margin = new System.Windows.Forms.Padding(7);
-            this.guna2TextBox1.Name = "guna2TextBox1";
-            this.guna2TextBox1.PlaceholderForeColor = System.Drawing.Color.Gray;
-            this.guna2TextBox1.PlaceholderText = "Qaunity";
-            this.guna2TextBox1.SelectedText = "";
-            this.guna2TextBox1.Size = new System.Drawing.Size(90, 39);
-            this.guna2TextBox1.TabIndex = 12;
+            this.txtQaunity.Animated = true;
+            this.txtQaunity.BorderRadius = 5;
+            this.txtQaunity.BorderThickness = 0;
+            this.txtQaunity.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtQaunity.DefaultText = "";
+            this.txtQaunity.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtQaunity.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtQaunity.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtQaunity.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtQaunity.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtQaunity.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtQaunity.ForeColor = System.Drawing.Color.Black;
+            this.txtQaunity.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtQaunity.Location = new System.Drawing.Point(258, 773);
+            this.txtQaunity.Margin = new System.Windows.Forms.Padding(7);
+            this.txtQaunity.Name = "txtQaunity";
+            this.txtQaunity.PlaceholderForeColor = System.Drawing.Color.Gray;
+            this.txtQaunity.PlaceholderText = "Qaunity";
+            this.txtQaunity.SelectedText = "";
+            this.txtQaunity.Size = new System.Drawing.Size(90, 39);
+            this.txtQaunity.TabIndex = 12;
+            // 
+            // pDiscount
+            // 
+            this.pDiscount.HeaderText = "Disccount";
+            this.pDiscount.MinimumWidth = 6;
+            this.pDiscount.Name = "pDiscount";
+            this.pDiscount.ReadOnly = true;
             // 
             // SalePageViewForm
             // 
@@ -375,6 +370,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "SalePageViewForm";
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login Page";
             this.Load += new System.EventHandler(this.SalePageViewForm_Load);
@@ -389,13 +385,12 @@
         #endregion
 
         private System.Windows.Forms.Panel mainPanel;
-        private System.Windows.Forms.Label titleLBL;
-        private Guna.UI2.WinForms.Guna2TextBox discountTB;
+        private Guna.UI2.WinForms.Guna2TextBox txtDiscount;
         private Guna.UI2.WinForms.Guna2Button saleButton;
         private Guna.UI2.WinForms.Guna2PictureBox logoPB;
         private Guna.UI2.WinForms.Guna2Button backButton;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
-        private System.Windows.Forms.Label noteLBL;
+        private System.Windows.Forms.Label lblInvoiceNunber;
         private System.Windows.Forms.ListView ltvProducts;
         private System.Windows.Forms.ColumnHeader productName;
         private System.Windows.Forms.ColumnHeader Price;
@@ -407,7 +402,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn pPrice;
         private Guna.UI2.WinForms.Guna2ComboBox cbxCategory;
         private System.Windows.Forms.ColumnHeader stock;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
+        private Guna.UI2.WinForms.Guna2TextBox txtQaunity;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pDiscount;
     }
 }
 

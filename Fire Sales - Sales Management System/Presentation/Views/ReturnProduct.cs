@@ -17,6 +17,7 @@ namespace Fire_Sales___Sales_Management_System
         public ReturnProduct()
         {
             InitializeComponent();
+            new Guna.UI2.WinForms.Guna2ShadowForm(this);
         }
 
         private void PictureBox1_Click(object sender, EventArgs e)
@@ -50,7 +51,7 @@ namespace Fire_Sales___Sales_Management_System
 
         private void BackButton_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
 
         private void ProductsCB_SelectedIndexChanged(object sender, EventArgs e)

@@ -19,6 +19,7 @@ namespace Fire_Sales___Sales_Management_System.Presentation.Views
         public MainView2(User user)
         {
             InitializeComponent();
+            new Guna.UI2.WinForms.Guna2ShadowForm(this);
             _user = user;
         }
 
@@ -55,6 +56,11 @@ namespace Fire_Sales___Sales_Management_System.Presentation.Views
             new AddNewProductForm().ShowDialog();
         }
 
+        private void txtProducts_Click(object sender, EventArgs e)
+        {
+            new SalePageViewForm().ShowDialog();
+        }
+
         private void btnCraeteCategory_Click(object sender, EventArgs e)
         {
             new AddNewCategoryForm().ShowDialog();
@@ -83,6 +89,31 @@ namespace Fire_Sales___Sales_Management_System.Presentation.Views
         private void label6_Click_1(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            new EnterExpensesView().ShowDialog();
+        }
+
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+            new PurchasePageViewForm().ShowDialog();
+        }
+
+        private void guna2Button3_Click(object sender, EventArgs e)
+        {
+            new ReturnBillView().ShowDialog();
+        }
+
+        private void guna2Button4_Click(object sender, EventArgs e)
+        {
+            new ReturnProduct().ShowDialog();
+        }
+
+        private void guna2Button5_Click(object sender, EventArgs e)
+        {
+            new Users().ShowDialog();
         }
     }
 }

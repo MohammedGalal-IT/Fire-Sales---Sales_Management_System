@@ -25,6 +25,7 @@ namespace Fire_Sales___Sales_Management_System.Presentation.Views
         public AddNewCategoryForm()
         {
             InitializeComponent();
+            new Guna.UI2.WinForms.Guna2ShadowForm(this);
         }
 
         private void PictureBox1_Click(object sender, EventArgs e)

@@ -300,6 +300,12 @@
     <Compile Include="Presentation\Views\TestView.Designer.cs">
       <DependentUpon>TestView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\Views\Users.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\Views\Users.Designer.cs">
+      <DependentUpon>Users.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Presentation\TempViews\CreateAccountView.resx">
@@ -343,6 +349,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\Views\signinForm.resx">
       <DependentUpon>signinForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\Views\Users.resx">
+      <DependentUpon>Users.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
