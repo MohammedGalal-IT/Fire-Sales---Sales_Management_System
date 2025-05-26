@@ -28,25 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewItem listViewItem5 = new System.Windows.Forms.ListViewItem(new System.Windows.Forms.ListViewItem.ListViewSubItem[] {
+            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem(new System.Windows.Forms.ListViewItem.ListViewSubItem[] {
             new System.Windows.Forms.ListViewItem.ListViewSubItem(null, "1", System.Drawing.Color.Gray, System.Drawing.Color.White, new System.Drawing.Font("Cairo", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)))),
             new System.Windows.Forms.ListViewItem.ListViewSubItem(null, "1st Product", System.Drawing.SystemColors.WindowText, System.Drawing.SystemColors.InactiveCaption, new System.Drawing.Font("Cairo", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)))),
             new System.Windows.Forms.ListViewItem.ListViewSubItem(null, "Category1", System.Drawing.SystemColors.WindowText, System.Drawing.SystemColors.InactiveCaption, new System.Drawing.Font("Cairo", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)))),
             new System.Windows.Forms.ListViewItem.ListViewSubItem(null, "3.4$", System.Drawing.SystemColors.WindowText, System.Drawing.SystemColors.InactiveCaption, new System.Drawing.Font("Cairo", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)))),
             new System.Windows.Forms.ListViewItem.ListViewSubItem(null, "30", System.Drawing.SystemColors.WindowText, System.Drawing.SystemColors.InactiveCaption, new System.Drawing.Font("Cairo", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0))))}, -1);
-            System.Windows.Forms.ListViewItem listViewItem6 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem(new string[] {
             "2",
             "2nd Product",
             "Category2",
             "5$",
             "80"}, -1, System.Drawing.Color.Gray, System.Drawing.Color.Empty, null);
-            System.Windows.Forms.ListViewItem listViewItem7 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem(new string[] {
             "3",
             "3rd Product Name",
             "Category",
             "5.7$",
             "120"}, -1, System.Drawing.Color.Gray, System.Drawing.Color.Empty, null);
-            System.Windows.Forms.ListViewItem listViewItem8 = new System.Windows.Forms.ListViewItem(new System.Windows.Forms.ListViewItem.ListViewSubItem[] {
+            System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem(new System.Windows.Forms.ListViewItem.ListViewSubItem[] {
             new System.Windows.Forms.ListViewItem.ListViewSubItem(null, "4", System.Drawing.Color.Gray, System.Drawing.Color.White, new System.Drawing.Font("Cairo", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)))),
             new System.Windows.Forms.ListViewItem.ListViewSubItem(null, "Enter Your Product Name Here", System.Drawing.Color.Silver, System.Drawing.Color.White, new System.Drawing.Font("Cairo", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)))),
             new System.Windows.Forms.ListViewItem.ListViewSubItem(null, "Category3", System.Drawing.Color.Silver, System.Drawing.Color.White, new System.Drawing.Font("Cairo", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)))),
@@ -68,6 +68,7 @@
             this.saleButton = new Guna.UI2.WinForms.Guna2Button();
             this.discountTB = new Guna.UI2.WinForms.Guna2TextBox();
             this.titleLBL = new System.Windows.Forms.Label();
+            this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.mainPanel.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logoPB)).BeginInit();
@@ -76,6 +77,7 @@
             // mainPanel
             // 
             this.mainPanel.BackColor = System.Drawing.Color.Tan;
+            this.mainPanel.Controls.Add(this.guna2Panel2);
             this.mainPanel.Controls.Add(this.guna2Panel1);
             this.mainPanel.Controls.Add(this.noteLBL);
             this.mainPanel.Controls.Add(this.productListV);
@@ -87,9 +89,9 @@
             this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mainPanel.Font = new System.Drawing.Font("Cairo", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mainPanel.Location = new System.Drawing.Point(0, 0);
-            this.mainPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.mainPanel.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.mainPanel.Name = "mainPanel";
-            this.mainPanel.Size = new System.Drawing.Size(875, 738);
+            this.mainPanel.Size = new System.Drawing.Size(1500, 1153);
             this.mainPanel.TabIndex = 1;
             this.mainPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.Panel1_Paint);
             // 
@@ -101,29 +103,29 @@
             this.guna2Panel1.Controls.Add(this.productQuantityLBL);
             this.guna2Panel1.Cursor = System.Windows.Forms.Cursors.Default;
             this.guna2Panel1.FillColor = System.Drawing.Color.LightGray;
-            this.guna2Panel1.Location = new System.Drawing.Point(68, 449);
-            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Panel1.Location = new System.Drawing.Point(117, 702);
+            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(741, 50);
+            this.guna2Panel1.Size = new System.Drawing.Size(1270, 78);
             this.guna2Panel1.TabIndex = 30;
             // 
             // productNameLBL
             // 
             this.productNameLBL.AutoSize = true;
-            this.productNameLBL.Location = new System.Drawing.Point(20, 11);
-            this.productNameLBL.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.productNameLBL.Location = new System.Drawing.Point(34, 17);
+            this.productNameLBL.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.productNameLBL.Name = "productNameLBL";
-            this.productNameLBL.Size = new System.Drawing.Size(255, 32);
+            this.productNameLBL.Size = new System.Drawing.Size(389, 49);
             this.productNameLBL.TabIndex = 1;
             this.productNameLBL.Text = "No Product Choose From The List";
             // 
             // productQuantityLBL
             // 
             this.productQuantityLBL.AutoSize = true;
-            this.productQuantityLBL.Location = new System.Drawing.Point(593, 11);
-            this.productQuantityLBL.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.productQuantityLBL.Location = new System.Drawing.Point(1017, 17);
+            this.productQuantityLBL.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.productQuantityLBL.Name = "productQuantityLBL";
-            this.productQuantityLBL.Size = new System.Drawing.Size(136, 32);
+            this.productQuantityLBL.Size = new System.Drawing.Size(209, 49);
             this.productQuantityLBL.TabIndex = 0;
             this.productQuantityLBL.Text = "Product Quantity";
             // 
@@ -132,11 +134,11 @@
             this.noteLBL.AutoSize = true;
             this.noteLBL.Font = new System.Drawing.Font("Cairo", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.noteLBL.ForeColor = System.Drawing.Color.White;
-            this.noteLBL.Location = new System.Drawing.Point(306, 416);
-            this.noteLBL.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.noteLBL.Location = new System.Drawing.Point(525, 650);
+            this.noteLBL.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.noteLBL.Name = "noteLBL";
-            this.noteLBL.Padding = new System.Windows.Forms.Padding(12, 0, 12, 0);
-            this.noteLBL.Size = new System.Drawing.Size(291, 32);
+            this.noteLBL.Padding = new System.Windows.Forms.Padding(21, 0, 21, 0);
+            this.noteLBL.Size = new System.Drawing.Size(454, 49);
             this.noteLBL.TabIndex = 29;
             this.noteLBL.Text = "Choose Product to Add More Items";
             // 
@@ -151,14 +153,14 @@
             this.stock_quantity});
             this.productListV.HideSelection = false;
             this.productListV.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem5,
-            listViewItem6,
-            listViewItem7,
-            listViewItem8});
-            this.productListV.Location = new System.Drawing.Point(68, 161);
-            this.productListV.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            listViewItem1,
+            listViewItem2,
+            listViewItem3,
+            listViewItem4});
+            this.productListV.Location = new System.Drawing.Point(131, 252);
+            this.productListV.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.productListV.Name = "productListV";
-            this.productListV.Size = new System.Drawing.Size(740, 237);
+            this.productListV.Size = new System.Drawing.Size(1233, 267);
             this.productListV.TabIndex = 24;
             this.productListV.UseCompatibleStateImageBehavior = false;
             this.productListV.View = System.Windows.Forms.View.Details;
@@ -198,10 +200,10 @@
             this.backButton.FillColor = System.Drawing.Color.Black;
             this.backButton.Font = new System.Drawing.Font("Cairo Light", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.backButton.ForeColor = System.Drawing.Color.White;
-            this.backButton.Location = new System.Drawing.Point(-16, 15);
-            this.backButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.backButton.Location = new System.Drawing.Point(-27, 23);
+            this.backButton.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.backButton.Name = "backButton";
-            this.backButton.Size = new System.Drawing.Size(206, 36);
+            this.backButton.Size = new System.Drawing.Size(353, 56);
             this.backButton.TabIndex = 22;
             this.backButton.Text = "Back to home Page";
             // 
@@ -210,10 +212,10 @@
             this.logoPB.FillColor = System.Drawing.Color.Black;
             this.logoPB.Image = global::Fire_Sales___Sales_Management_System.Properties.Resources.box;
             this.logoPB.ImageRotate = 0F;
-            this.logoPB.Location = new System.Drawing.Point(400, 36);
-            this.logoPB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.logoPB.Location = new System.Drawing.Point(686, 56);
+            this.logoPB.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.logoPB.Name = "logoPB";
-            this.logoPB.Size = new System.Drawing.Size(75, 80);
+            this.logoPB.Size = new System.Drawing.Size(129, 125);
             this.logoPB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.logoPB.TabIndex = 15;
             this.logoPB.TabStop = false;
@@ -229,10 +231,10 @@
             this.saleButton.FillColor = System.Drawing.Color.Black;
             this.saleButton.Font = new System.Drawing.Font("Cairo", 9.749999F, System.Drawing.FontStyle.Bold);
             this.saleButton.ForeColor = System.Drawing.Color.Tan;
-            this.saleButton.Location = new System.Drawing.Point(598, 540);
-            this.saleButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.saleButton.Location = new System.Drawing.Point(1025, 844);
+            this.saleButton.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.saleButton.Name = "saleButton";
-            this.saleButton.Size = new System.Drawing.Size(210, 44);
+            this.saleButton.Size = new System.Drawing.Size(360, 69);
             this.saleButton.TabIndex = 14;
             this.saleButton.Text = "Add Items";
             this.saleButton.Click += new System.EventHandler(this.Guna2Button1_Click);
@@ -252,13 +254,13 @@
             this.discountTB.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.discountTB.ForeColor = System.Drawing.Color.Black;
             this.discountTB.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.discountTB.Location = new System.Drawing.Point(68, 540);
-            this.discountTB.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.discountTB.Location = new System.Drawing.Point(117, 844);
+            this.discountTB.Margin = new System.Windows.Forms.Padding(12, 11, 12, 11);
             this.discountTB.Name = "discountTB";
             this.discountTB.PlaceholderForeColor = System.Drawing.Color.Gray;
             this.discountTB.PlaceholderText = "Purchased Items Num.";
             this.discountTB.SelectedText = "";
-            this.discountTB.Size = new System.Drawing.Size(503, 44);
+            this.discountTB.Size = new System.Drawing.Size(862, 69);
             this.discountTB.TabIndex = 12;
             this.discountTB.TextChanged += new System.EventHandler(this.DiscountTB_TextChanged);
             // 
@@ -268,23 +270,33 @@
             this.titleLBL.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.titleLBL.Font = new System.Drawing.Font("Cairo Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.titleLBL.ForeColor = System.Drawing.Color.White;
-            this.titleLBL.Location = new System.Drawing.Point(346, 103);
-            this.titleLBL.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.titleLBL.Location = new System.Drawing.Point(593, 161);
+            this.titleLBL.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.titleLBL.Name = "titleLBL";
-            this.titleLBL.Size = new System.Drawing.Size(168, 45);
+            this.titleLBL.Size = new System.Drawing.Size(265, 72);
             this.titleLBL.TabIndex = 4;
             this.titleLBL.Text = "Purchase Page";
             this.titleLBL.Click += new System.EventHandler(this.titleLBL_Click);
             // 
+            // guna2Panel2
+            // 
+            this.guna2Panel2.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Panel2.BorderRadius = 15;
+            this.guna2Panel2.FillColor = System.Drawing.Color.White;
+            this.guna2Panel2.Location = new System.Drawing.Point(117, 236);
+            this.guna2Panel2.Name = "guna2Panel2";
+            this.guna2Panel2.Size = new System.Drawing.Size(1270, 313);
+            this.guna2Panel2.TabIndex = 31;
+            // 
             // PurchasePageViewForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(875, 738);
+            this.ClientSize = new System.Drawing.Size(1500, 1153);
             this.Controls.Add(this.mainPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.MaximizeBox = false;
             this.Name = "PurchasePageViewForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -316,6 +328,7 @@
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private System.Windows.Forms.Label productNameLBL;
         private System.Windows.Forms.Label productQuantityLBL;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
     }
 }
 

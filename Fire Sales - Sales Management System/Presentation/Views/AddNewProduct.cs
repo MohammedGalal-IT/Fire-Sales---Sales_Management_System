@@ -22,9 +22,12 @@ namespace Fire_Sales___Sales_Management_System.Presentation.Views
     public partial class AddNewProductForm : Form
     {
         DatabaseManager db = new DatabaseManager(@"Data Source=DESKTOP-KL322NI\MOHAMMEDGALAL; DataBase=db_FireSales;integrated Security=true;");
+        
         public AddNewProductForm()
+
         {
             InitializeComponent();
+            metroGrid1.BringToFront();
 
         }
 

@@ -17,6 +17,7 @@ namespace Fire_Sales___Sales_Management_System.Presentation.Views
         public PurchasePageViewForm()
         {
             InitializeComponent();
+            productListV.BringToFront();
         }
 
         private void PictureBox1_Click(object sender, EventArgs e)

@@ -29,6 +29,8 @@ namespace Fire_Sales___Sales_Management_System.Presentation.Views
         public SalePageViewForm()
         {
             InitializeComponent();
+            guna2DataGridView1.BringToFront();
+            ltvProducts.BringToFront();
             categoryRepository = new CategoryRepository(db);
             categoryService = new CategoryService(categoryRepository);
             productRepository = new ProductRepository(db);

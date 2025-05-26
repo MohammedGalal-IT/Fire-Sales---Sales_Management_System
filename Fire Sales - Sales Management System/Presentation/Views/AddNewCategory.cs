@@ -25,6 +25,8 @@ namespace Fire_Sales___Sales_Management_System.Presentation.Views
         public AddNewCategoryForm()
         {
             InitializeComponent();
+            guna2DataGridView1.BringToFront();
+
         }
 
         private void PictureBox1_Click(object sender, EventArgs e)
@@ -78,6 +80,11 @@ namespace Fire_Sales___Sales_Management_System.Presentation.Views
         }
 
         private void txtCategoryName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MetroGrid1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
