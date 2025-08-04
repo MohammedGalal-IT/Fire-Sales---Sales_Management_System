@@ -29,5 +29,10 @@ namespace Fire_Sales___Sales_Management_System.Presentation.Views
             this.userTableAdapter.Fill(this.db_FireSalesDataSet.User);
 
         }
+
+        private void mainPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

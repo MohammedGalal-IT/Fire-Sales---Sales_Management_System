@@ -33,23 +33,23 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.mainPanel = new System.Windows.Forms.Panel();
-            this.backButton = new Guna.UI2.WinForms.Guna2Button();
-            this.logoPB = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.titleLBL = new System.Windows.Forms.Label();
             this.metroGrid1 = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.db_FireSalesDataSet = new Fire_Sales___Sales_Management_System.db_FireSalesDataSet();
-            this.userBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.userTableAdapter = new Fire_Sales___Sales_Management_System.db_FireSalesDataSetTableAdapters.UserTableAdapter();
             this.userIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.usernameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.passwordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.roleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.isActiveDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.userBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.db_FireSalesDataSet = new Fire_Sales___Sales_Management_System.db_FireSalesDataSet();
+            this.backButton = new Guna.UI2.WinForms.Guna2Button();
+            this.logoPB = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.titleLBL = new System.Windows.Forms.Label();
+            this.userTableAdapter = new Fire_Sales___Sales_Management_System.db_FireSalesDataSetTableAdapters.UserTableAdapter();
             this.mainPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.logoPB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.metroGrid1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.db_FireSalesDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.db_FireSalesDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.logoPB)).BeginInit();
             this.SuspendLayout();
             // 
             // mainPanel
@@ -66,50 +66,7 @@
             this.mainPanel.Name = "mainPanel";
             this.mainPanel.Size = new System.Drawing.Size(845, 770);
             this.mainPanel.TabIndex = 2;
-            // 
-            // backButton
-            // 
-            this.backButton.BorderRadius = 5;
-            this.backButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.backButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.backButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.backButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.backButton.FillColor = System.Drawing.Color.Black;
-            this.backButton.Font = new System.Drawing.Font("Cairo Light", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.backButton.ForeColor = System.Drawing.Color.White;
-            this.backButton.Location = new System.Drawing.Point(-16, 15);
-            this.backButton.Margin = new System.Windows.Forms.Padding(4);
-            this.backButton.Name = "backButton";
-            this.backButton.Size = new System.Drawing.Size(206, 36);
-            this.backButton.TabIndex = 22;
-            this.backButton.Text = "Back to home Page";
-            this.backButton.Click += new System.EventHandler(this.backButton_Click);
-            // 
-            // logoPB
-            // 
-            this.logoPB.FillColor = System.Drawing.Color.Black;
-            this.logoPB.Image = global::Fire_Sales___Sales_Management_System.Properties.Resources.img;
-            this.logoPB.ImageRotate = 0F;
-            this.logoPB.Location = new System.Drawing.Point(400, 15);
-            this.logoPB.Margin = new System.Windows.Forms.Padding(4);
-            this.logoPB.Name = "logoPB";
-            this.logoPB.Size = new System.Drawing.Size(75, 80);
-            this.logoPB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.logoPB.TabIndex = 15;
-            this.logoPB.TabStop = false;
-            // 
-            // titleLBL
-            // 
-            this.titleLBL.AutoSize = true;
-            this.titleLBL.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.titleLBL.Font = new System.Drawing.Font("Cairo Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.titleLBL.ForeColor = System.Drawing.Color.White;
-            this.titleLBL.Location = new System.Drawing.Point(398, 78);
-            this.titleLBL.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.titleLBL.Name = "titleLBL";
-            this.titleLBL.Size = new System.Drawing.Size(77, 45);
-            this.titleLBL.TabIndex = 4;
-            this.titleLBL.Text = "Users";
+            this.mainPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.mainPanel_Paint);
             // 
             // metroGrid1
             // 
@@ -171,20 +128,6 @@
             this.metroGrid1.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.metroGrid1.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             // 
-            // db_FireSalesDataSet
-            // 
-            this.db_FireSalesDataSet.DataSetName = "db_FireSalesDataSet";
-            this.db_FireSalesDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // userBindingSource
-            // 
-            this.userBindingSource.DataMember = "User";
-            this.userBindingSource.DataSource = this.db_FireSalesDataSet;
-            // 
-            // userTableAdapter
-            // 
-            this.userTableAdapter.ClearBeforeFill = true;
-            // 
             // userIDDataGridViewTextBoxColumn
             // 
             this.userIDDataGridViewTextBoxColumn.DataPropertyName = "UserID";
@@ -221,6 +164,64 @@
             this.isActiveDataGridViewCheckBoxColumn.MinimumWidth = 6;
             this.isActiveDataGridViewCheckBoxColumn.Name = "isActiveDataGridViewCheckBoxColumn";
             // 
+            // userBindingSource
+            // 
+            this.userBindingSource.DataMember = "User";
+            this.userBindingSource.DataSource = this.db_FireSalesDataSet;
+            // 
+            // db_FireSalesDataSet
+            // 
+            this.db_FireSalesDataSet.DataSetName = "db_FireSalesDataSet";
+            this.db_FireSalesDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // backButton
+            // 
+            this.backButton.BorderRadius = 5;
+            this.backButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.backButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.backButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.backButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.backButton.FillColor = System.Drawing.Color.Black;
+            this.backButton.Font = new System.Drawing.Font("Cairo Light", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.backButton.ForeColor = System.Drawing.Color.White;
+            this.backButton.Location = new System.Drawing.Point(-16, 15);
+            this.backButton.Margin = new System.Windows.Forms.Padding(4);
+            this.backButton.Name = "backButton";
+            this.backButton.Size = new System.Drawing.Size(206, 36);
+            this.backButton.TabIndex = 22;
+            this.backButton.Text = "Back to home Page";
+            this.backButton.Click += new System.EventHandler(this.backButton_Click);
+            // 
+            // logoPB
+            // 
+            this.logoPB.FillColor = System.Drawing.Color.Black;
+            this.logoPB.Image = global::Fire_Sales___Sales_Management_System.Properties.Resources.img;
+            this.logoPB.ImageRotate = 0F;
+            this.logoPB.Location = new System.Drawing.Point(400, 15);
+            this.logoPB.Margin = new System.Windows.Forms.Padding(4);
+            this.logoPB.Name = "logoPB";
+            this.logoPB.Size = new System.Drawing.Size(75, 80);
+            this.logoPB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.logoPB.TabIndex = 15;
+            this.logoPB.TabStop = false;
+            // 
+            // titleLBL
+            // 
+            this.titleLBL.AutoSize = true;
+            this.titleLBL.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.titleLBL.Font = new System.Drawing.Font("Cairo Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.titleLBL.ForeColor = System.Drawing.Color.White;
+            this.titleLBL.Location = new System.Drawing.Point(398, 78);
+            this.titleLBL.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.titleLBL.Name = "titleLBL";
+            this.titleLBL.Size = new System.Drawing.Size(77, 45);
+            this.titleLBL.TabIndex = 4;
+            this.titleLBL.Text = "Users";
+            // 
+            // userTableAdapter
+            // 
+            this.userTableAdapter.ClearBeforeFill = true;
+            // 
             // Users
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -235,10 +236,10 @@
             this.Load += new System.EventHandler(this.Users_Load);
             this.mainPanel.ResumeLayout(false);
             this.mainPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.logoPB)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.metroGrid1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.db_FireSalesDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.db_FireSalesDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.logoPB)).EndInit();
             this.ResumeLayout(false);
 
         }

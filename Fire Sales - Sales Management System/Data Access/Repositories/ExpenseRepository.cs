@@ -43,7 +43,7 @@ namespace Fire_Sales___Sales_Management_System.Data_Access.Repositories
                 { "@Description", item.Description },
                 { "@Amount", item.Amount },
                 { "@Date", item.Date },
-                { "@Type", item.ExpenseType },
+                { "@Type", item.ExpenseType.ToString() },
                 { "@UserID", item.CreatedBy }
             };
 
